@@ -34,8 +34,28 @@ jobs:
         run: |
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -e FACEBOOK_VERIFY=${FACEBOOK_VERIFY} \
+            -e FACEBOOK_SECRET=${FACEBOOK_SECRET} \
+            -e FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN} \
             -u $(id -u) \
             --name github_runner_dgcas2024_rasa \
             -p 5005:5005 \
             ${{ vars.RASA_IMAGE }} \
             run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml
+          echo "Waiting for action server to be ready..."
+          timeout=120
+          printf 'Server starting..'
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005; do
+            printf '.'
+            sleep 5
+            timeout=$((timeout-5))
+            if [ "$timeout" -le 0 ]; then
+              echo "Timeout when start server."
+              exit 1
+            fi
+          done
+          echo "Server is ready."
+        env:
+          FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
+          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
