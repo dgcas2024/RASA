@@ -29,7 +29,7 @@ nlu:
 
 - intent: noi_linh_tinh
   examples: |
-    - abcxyz
+    - abcxyz_t
 
 - intent: dinh_danh_dung
   examples: |
