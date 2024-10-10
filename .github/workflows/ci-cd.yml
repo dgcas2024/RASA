@@ -28,6 +28,7 @@ jobs:
       - name: Stop current container
         run: |
           sudo docker container stop github_runner_dgcas2024_rasa
+        continue-on-error: true
 
       - name: Run model
         run: |
