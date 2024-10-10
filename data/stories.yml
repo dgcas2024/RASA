@@ -2,29 +2,17 @@ version: "3.1"
 
 stories:
 
-- story: happy path
+- story: nhac_no
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: start
+  - action: utter_start
+  - intent: dinh_danh_dung
+  - action: utter_dinh_danh_dung
 
-- story: sad path 1
+- story: goi_nham_so
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: start
+  - action: utter_start
+  - intent: dinh_danh_sai
+  - action: utter_dinh_danh_sai
+  

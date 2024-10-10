@@ -2,12 +2,12 @@ version: "3.1"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Ket thuc cuoc tro chuyen 1
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
-
-- rule: Say 'I am a bot' anytime the user challenges
+  - intent: end_vui_ve
+  - action: utter_end_vui_ve
+  
+- rule: Ket thuc cuoc tro chuyen 2
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - intent: end_khong_vui
+  - action: utter_end_khong_vui

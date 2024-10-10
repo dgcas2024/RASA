@@ -1,33 +1,31 @@
-version: "3.1"
+﻿version: "3.1"
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+  - start
+  - noi_linh_tinh
+  - dinh_danh_dung
+  - dinh_danh_sai
+  - end_vui_ve
+  - end_khong_vui
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
+  utter_start:
+  - text: "FE Creadit kính chào quý khách, xin hỏi đây có phải là anh A không ạ?"  
+    
+  utter_noi_linh_tinh:
+  - text: "Tạm biệt quý khách"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_dinh_danh_dung:
+  - text: "Quý khách vui lòng thanh toán khoản nợ khổng lồ trước năm 2025"
 
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_dinh_danh_sai:
+  - text: "Xin lỗi đã làm phiền quý khách"
+  
+  utter_end_vui_ve:
+  - text: "Tạm biệt quý khách, cảm ơn quý khách đã tích cực hợp tác"
+  
+  utter_end_khong_vui:
+  - text: "Tạm biệt quý khách"
 
 session_config:
   session_expiration_time: 60
