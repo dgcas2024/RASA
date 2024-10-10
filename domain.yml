@@ -10,7 +10,7 @@ intents:
 
 responses:
   utter_start:
-  - text: "FE Creadit kính chào quý khách, xin hỏi đây có phải là anh A không ạ?"  
+  - text: "FE Creadit kính chào quý khách, xin hỏi đây có phải là anh ABC không ạ?"  
     
   utter_noi_linh_tinh:
   - text: "Tạm biệt quý khách"
