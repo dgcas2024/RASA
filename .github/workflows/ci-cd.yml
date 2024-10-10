@@ -19,7 +19,7 @@ jobs:
 
       - name: Train Rasa model with Rasa Pro
         run: |
-          sudo docker run -v ${GITHUB_WORKSPACE}:/app \
+          sudo docker run --rm -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             ${{ vars.RASA_IMAGE }} \
             train -c /app/config.yml --domain /app/domain.yml --endpoints /app/endpoints.yml --data /app/data --out /app/models
@@ -30,7 +30,7 @@ jobs:
 
       - name: Run model
         run: |
-          sudo docker run -v ${GITHUB_WORKSPACE}:/app \
+          echo ${GITHUB_WORKSPACE} && ls ${GITHUB_WORKSPACE} && sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             --name github_runner_dgcas2024_rasa
             -p 5005:5005
