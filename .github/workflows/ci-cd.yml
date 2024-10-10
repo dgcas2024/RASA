@@ -15,22 +15,22 @@ jobs:
 
       - name: Pull Rasa Pro image
         run: |
-          docker pull ${{ vars.RASA_IMAGE }}
+          sudo docker pull ${{ vars.RASA_IMAGE }}
 
       - name: Train Rasa model with Rasa Pro
         run: |
-          docker run -v ${GITHUB_WORKSPACE}:/app \
+          sudo docker run -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             ${{ vars.RASA_IMAGE }} \
             train -c /app/config.yml --domain /app/domain.yml --endpoints /app/endpoints.yml --data /app/data --out /app/models
 
       - name: Stop current container
         run: |
-          docker container stop github_runner_dgcas2024_rasa
+          sudo docker container stop github_runner_dgcas2024_rasa
 
       - name: Run model
         run: |
-          docker run -v ${GITHUB_WORKSPACE}:/app \
+          sudo docker run -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             --name github_runner_dgcas2024_rasa
             -p 5005:5005
