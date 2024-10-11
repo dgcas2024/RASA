@@ -40,7 +40,6 @@ jobs:
             -u $(id -u) \
             --name github_runner_dgcas2024_rasa \
             -p 5005:5005 \
-            -p 5006:8080 \
             ${{ vars.RASA_IMAGE }} \
             run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api --cors *
           echo "Waiting for server to be ready..."
