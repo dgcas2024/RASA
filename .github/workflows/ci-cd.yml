@@ -44,15 +44,15 @@ jobs:
             run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api --cors *
           echo "Waiting for server to be ready..."
           timeout=300
-          #while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005; do
-          #  echo "Waiting for server to be ready...$timeout"
-          #  sleep 1
-          #  timeout=$((timeout-1))
-          #  if [ "$timeout" -le 0 ]; then
-          #    echo "Timeout when start server."
-          #    exit 1
-          #  fi
-          #done
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005; do
+            echo "Waiting for server to be ready...$timeout"
+            sleep 1
+            timeout=$((timeout-1))
+            if [ "$timeout" -le 0 ]; then
+              echo "Timeout when start server."
+              exit 1
+            fi
+          done
           echo "Server is ready."
         env:
           FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
