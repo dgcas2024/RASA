@@ -48,7 +48,7 @@ jobs:
             --name github_runner_dgcas2024_rasa_action \
             -p 5007:5007 \
             ${{ vars.RASA_IMAGE }} \
-            run actions --enable-api \
+            run actions \
             --port 5007 \
             #--cors "*"
 
