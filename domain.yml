@@ -1,31 +1,23 @@
 ﻿version: "3.1"
 
 intents:
-  - start
-  - noi_linh_tinh
-  - dinh_danh_dung
-  - dinh_danh_sai
-  - end_vui_ve
-  - end_khong_vui
+  - intent_start
+  - intent_xac_dinh_kh_good
+  - intent_nhac_no_good
+  - intent_nhac_no_good_xac_nhan_lai_good
+  - intent_force_end
 
 responses:
-  utter_start:
-  - text: "FE Creadit kính chào quý khách, xin hỏi đây có phải là anh ABC2 không ạ?"  
-    
-  utter_noi_linh_tinh:
-  - text: "Tạm biệt quý khách"
-
-  utter_dinh_danh_dung:
-  - text: "Quý khách vui lòng thanh toán khoản nợ khổng lồ trước năm 2025"
-
-  utter_dinh_danh_sai:
-  - text: "Xin lỗi đã làm phiền quý khách"
-  
-  utter_end_vui_ve:
-  - text: "Tạm biệt quý khách, cảm ơn quý khách đã tích cực hợp tác"
-  
-  utter_end_khong_vui:
-  - text: "Tạm biệt quý khách"
+  utter_xac_dinh_khach_hang:
+  - text: "Chào anh, cho em hỏi có phải anh Nguyễn Văn A đang nghe máy đúng không ạ?"  
+  utter_nhac_no:
+  - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày 20/10/2024, với số tiền cần thanh toán là 20.000.000 đồng, anh sẽ thanh toán 20.000.000 đúng hạn phải không ạ?"
+  utter_phan_hoi_nhac_no_good_xac_nhan_lan_1:
+  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày 20/10/2024, với số tiền 20.000.000 cho công ty em đúng không ạ?"
+  utter_phan_hoi_nhac_no_good_xac_nhan_lan_2:
+  - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
+  utter_ghi_nhan_thong_tin_tra_no:
+  - text: "Em đã ghi nhận cam kết thanh toán của anh, vui lòng giữ lại biên lai sau khi thanh toán, cần hỗ trợ thêm, anh liên hệ Kênh Zalo FE CREDIT hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
 
 session_config:
   session_expiration_time: 60

@@ -1,50 +1,39 @@
 ﻿version: "3.1"
 
 nlu:
-- intent: start
-  examples: |  
+- intent: intent_start
+  examples: |
     - a lô
     - nghe
-    - lô
-    - ai đó
-    - à lô
-    - à lố
-
-- intent: end_vui_ve
+    - alo
+- intent: intent_xac_dinh_khach_hang_good
   examples: |
-    - cảm ơn
-    - nhất trí
-    - múc
-    - ô kê
-    - vâng
-    - dạ
-
-- intent: end_khong_vui
-  examples: |
-    - biến
-    - cút
-    - bấm nút
-    - vl
-    - éo
-
-- intent: noi_linh_tinh
-  examples: |
-    - abcxyz_t
-
-- intent: dinh_danh_dung
-  examples: |
-    - đúng rồi
     - đúng
-    - có gì không
-    - tôi đây
-    - anh đây
-    - chị đây
-    - em đây
+    - ừ
     - vâng
     - dạ
-    - phải
-
-- intent: dinh_danh_sai
+    - có gì không
+    - chị đây
+    - anh đây
+    - em đây
+    - tôi đây
+- intent: intent_phan_hoi_nhac_no_good
   examples: |
-    - nhầm
-    - không phải
+    - ừ
+    - ok
+    - sẽ trả
+    - vâng
+    - yên tâm
+- intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+  examples: |
+    - ừ
+    - ok
+    - đúng
+    - sẽ trả
+    - vâng
+    - yên tâm
+    - chắc chắn
+    - được rồi
+- intent: intent_force_end
+  examples: |
+    - cút

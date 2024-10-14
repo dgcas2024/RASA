@@ -4,7 +4,7 @@ recipe: default.v1
 
 # The assistant project unique identifier
 # This default value must be replaced with a unique assistant name within your deployment
-assistant_id: 20241010-034815-thick-kestrel
+assistant_id: fe_chatbot_thu_hoi_no
 
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/

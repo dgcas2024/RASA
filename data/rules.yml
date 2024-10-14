@@ -1,13 +1,7 @@
-version: "3.1"
+﻿version: "3.1"
 
 rules:
-
-- rule: Ket thuc cuoc tro chuyen 1
+- rule: luôn kết thúc trò chuyện
   steps:
-  - intent: end_vui_ve
-  - action: utter_end_vui_ve
-  
-- rule: Ket thuc cuoc tro chuyen 2
-  steps:
-  - intent: end_khong_vui
-  - action: utter_end_khong_vui
+  - intent: intent_force_end
+  - action: utter_force_end

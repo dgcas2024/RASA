@@ -2,17 +2,15 @@ version: "3.1"
 
 stories:
 
-- story: nhac_no
+- story: good_path
   steps:
-  - intent: start
-  - action: utter_start
-  - intent: dinh_danh_dung
-  - action: utter_dinh_danh_dung
-
-- story: goi_nham_so
-  steps:
-  - intent: start
-  - action: utter_start
-  - intent: dinh_danh_sai
-  - action: utter_dinh_danh_sai
-  
+  - intent: intent_start
+  - action: utter_xac_dinh_khach_hang
+  - intent: intent_xac_dinh_khach_hang_good
+  - action: utter_nhac_no
+  - intent: intent_phan_hoi_nhac_no_good
+  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_1
+  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_2
+  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+  - action: utter_ghi_nhan_thong_tin_tra_no
