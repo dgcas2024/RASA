@@ -46,8 +46,8 @@ jobs:
           timeout=300
           while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005; do
             echo "Waiting for server to be ready...$timeout"
-            sleep 5
-            timeout=$((timeout-5))
+            sleep 1
+            timeout=$((timeout-1))
             if [ "$timeout" -le 0 ]; then
               echo "Timeout when start server."
               exit 1
