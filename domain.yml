@@ -18,6 +18,8 @@ responses:
   - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
   utter_ghi_nhan_thong_tin_tra_no:
   - text: "Em đã ghi nhận cam kết thanh toán của anh, vui lòng giữ lại biên lai sau khi thanh toán, cần hỗ trợ thêm, anh liên hệ Kênh Zalo FE CREDIT hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
+  utter_force_end:
+  - text: "Tạm biệt quý khách!"
 
 session_config:
   session_expiration_time: 60
