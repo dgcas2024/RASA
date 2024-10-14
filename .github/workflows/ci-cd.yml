@@ -41,7 +41,7 @@ jobs:
             --name github_runner_dgcas2024_rasa \
             -p 5005:5005 \
             ${{ vars.RASA_IMAGE }} \
-            run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api --cors *
+            run --model /app2/models --endpoints /app2/endpoints.yml --credentials /app2/credentials.yml --enable-api --cors *
           echo "Waiting for server to be ready..."
           timeout=300
           while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005; do

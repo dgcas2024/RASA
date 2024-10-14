@@ -29,6 +29,11 @@ nlu:
     - sẽ trả
     - vâng
     - yên tâm
+- intent: intent_phan_hoi_nhac_no_good
+  examples: |
+    - không
+    - hết tiền
+    - không có tiền
 - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
   examples: |
     - ừ
