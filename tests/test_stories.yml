@@ -9,7 +9,7 @@ stories:
     intent: intent_start
   - action: utter_xac_dinh_khach_hang
   - user: |
-      ừ em
+      ừ
     intent: intent_xac_dinh_khach_hang_good
   - action: utter_nhac_no
   - user: |
