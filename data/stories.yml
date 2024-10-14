@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: good_path
+- story: good__path
   steps:
   - intent: intent_start
   - action: utter_xac_dinh_khach_hang

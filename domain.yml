@@ -11,9 +11,9 @@ responses:
   utter_xac_dinh_khach_hang:
   - text: "Chào anh, cho em hỏi có phải anh Nguyễn Văn A đang nghe máy đúng không ạ?"  
   utter_nhac_no:
-  - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày 20/10/2024, với số tiền cần thanh toán là 20.000.000 đồng, anh sẽ thanh toán 20.000.000 đúng hạn phải không ạ?"
+  - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày 21/10/2024, với số tiền cần thanh toán là 20.000.000 đồng, anh sẽ thanh toán 20.000.000 đúng hạn phải không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_1:
-  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày 20/10/2024, với số tiền 20.000.000 cho công ty em đúng không ạ?"
+  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày 21/10/2024, với số tiền 20.000.000 cho công ty em đúng không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_2:
   - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
   utter_ghi_nhan_thong_tin_tra_no:

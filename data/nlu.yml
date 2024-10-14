@@ -17,6 +17,11 @@ nlu:
     - anh đây
     - em đây
     - tôi đây
+    - phải
+- intent: intent_xac_dinh_khach_hang_bad
+  examples: |
+    - nhầm
+    - không phải
 - intent: intent_phan_hoi_nhac_no_good
   examples: |
     - ừ
