@@ -100,7 +100,7 @@ jobs:
 
           echo "Waiting for inspect to be ready..."
           timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006; do
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006/health; do
             echo "Waiting for inspect to be ready...$timeout"
             sleep 1
             timeout=$((timeout-1))
