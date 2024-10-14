@@ -2,7 +2,7 @@
 
 intents:
   - intent_start
-  - intent_xac_dinh_kh_good
+  - intent_xac_dinh_khach_hang_good
   - intent_nhac_no_good
   - intent_nhac_no_good_xac_nhan_lai_good
   - intent_force_end
