@@ -30,6 +30,28 @@ jobs:
           sudo docker container stop github_runner_dgcas2024_rasa && sudo docker container rm github_runner_dgcas2024_rasa
         continue-on-error: true
 
+      - name: Run actions
+        run: |
+          sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
+            -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -u $(id -u) \
+            --name github_runner_dgcas2024_rasa_action \
+            -p 5055:5055 \
+            ${{ vars.RASA_IMAGE }} \
+            run actions --cors "*"
+          echo "Waiting for actions to be ready..."
+          timeout=300
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5055/webhook; do
+            echo "Waiting for actions to be ready...$timeout"
+            sleep 1
+            timeout=$((timeout-1))
+            if [ "$timeout" -le 0 ]; then
+              echo "Timeout when start actions."
+              exit 1
+            fi
+          done
+          echo "Actions is ready."
+
       - name: Run model
         run: |
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
