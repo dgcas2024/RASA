@@ -25,11 +25,6 @@ jobs:
             ${{ vars.RASA_IMAGE }} \
             train -c /app/config.yml --domain /app/domain.yml --endpoints /app/endpoints.yml --data /app/data --out /app/models
 
-      - name: Stop current container server
-        run: |
-          sudo docker container stop github_runner_dgcas2024_rasa && sudo docker container rm github_runner_dgcas2024_rasa
-        continue-on-error: true
-
       - name: Stop current container inspect
         run: |
           sudo docker container stop github_runner_dgcas2024_rasa_inspect && sudo docker container rm github_runner_dgcas2024_rasa_inspect
@@ -39,6 +34,11 @@ jobs:
         run: |
           sudo docker container stop github_runner_dgcas2024_rasa_action && sudo docker container rm github_runner_dgcas2024_rasa_action
         continue-on-error: true
+
+      #- name: Stop current container server
+      #  run: |
+      #    sudo docker container stop github_runner_dgcas2024_rasa && sudo docker container rm github_runner_dgcas2024_rasa
+      #  continue-on-error: true
 
       - name: Run actions
         run: |
