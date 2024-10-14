@@ -44,18 +44,6 @@ jobs:
             -p 5055:5055 \
             ${{ vars.RASA_IMAGE }} \
             run actions --cors "*"
-          echo "Waiting for actions to be ready..."
-          timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5055/health; do
-            echo "Waiting for actions to be ready...$timeout"
-            sleep 1
-            timeout=$((timeout-1))
-            if [ "$timeout" -le 0 ]; then
-              echo "Timeout when start actions."
-              exit 1
-            fi
-          done
-          echo "Actions is ready."
 
       - name: Run model
         run: |
@@ -69,6 +57,26 @@ jobs:
             -p 5005:5005 \
             ${{ vars.RASA_IMAGE }} \
             run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api --cors "*"
+        env:
+          FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
+          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+
+      - name: Validate URL
+        run: |
+          echo "Waiting for actions to be ready..."
+          timeout=300
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5055/health; do
+            echo "Waiting for actions to be ready...$timeout"
+            sleep 1
+            timeout=$((timeout-1))
+            if [ "$timeout" -le 0 ]; then
+              echo "Timeout when start actions."
+              exit 1
+            fi
+          done
+          echo "Actions is ready."
+
           echo "Waiting for server to be ready..."
           timeout=300
           while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005/status; do
@@ -81,7 +89,3 @@ jobs:
             fi
           done
           echo "Server is ready."
-        env:
-          FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
-          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
