@@ -43,7 +43,8 @@ jobs:
             --name github_runner_dgcas2024_rasa_action \
             -p 5055:5055 \
             ${{ vars.RASA_IMAGE }} \
-            run actions --cors "*"
+            run actions \
+            #--cors "*"
 
       - name: Run model
         run: |
@@ -56,7 +57,8 @@ jobs:
             --name github_runner_dgcas2024_rasa \
             -p 5005:5005 \
             ${{ vars.RASA_IMAGE }} \
-            run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api --cors "*"
+            run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api \
+            #--cors "*"
         env:
           FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
           FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
