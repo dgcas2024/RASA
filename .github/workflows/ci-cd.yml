@@ -60,7 +60,7 @@ jobs:
             --name github_runner_dgcas2024_rasa_inspect \
             -p 5006:5006 \
             ${{ vars.RASA_IMAGE }} \
-            run actions \
+            run inspect --model /app/models --endpoints /app/endpoints.yml \
             --port 5006 \
             #--cors "*"
 
