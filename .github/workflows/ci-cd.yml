@@ -60,7 +60,7 @@ jobs:
             --name github_runner_dgcas2024_rasa_inspect \
             -p 5006:5006 \
             ${{ vars.RASA_IMAGE }} \
-            run inspect --model /app/models --endpoints /app/endpoints.yml \
+            inspect --model /app/models --endpoints /app/endpoints.yml \
             --port 5006 \
             #--cors "*"
 
@@ -100,7 +100,7 @@ jobs:
 
           echo "Waiting for inspect to be ready..."
           timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006/health; do
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006; do
             echo "Waiting for inspect to be ready...$timeout"
             sleep 1
             timeout=$((timeout-1))
