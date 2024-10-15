@@ -30,7 +30,7 @@ stories:
   - action: utter_nhac_no
   - intent: intent_phan_hoi_nhac_no_bad
   - action: utter_phan_hoi_nhac_no_bad_hoi_ly_do
-  - intent: intent_phan_hoi_nhac_no_bad_ly_do
+  - intent: intent_phan_hoi_nhac_no_bad
   - action: utter_phan_hoi_nhac_no_bad_yeu_cau_lan_2
   - intent: intent_phan_hoi_nhac_no_bad
   - action: utter_ghi_nhan_thong_tin_tra_no_bad
