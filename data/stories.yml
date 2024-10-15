@@ -2,6 +2,13 @@ version: "3.1"
 
 stories:
 
+- story: bad__nham_so
+  steps:
+  - intent: intent_start
+  - action: utter_xac_dinh_khach_hang
+  - intent: intent_xac_dinh_khach_hang_bad
+  - action: utter_nham_so_xin_loi_vi_lam_phien
+
 - story: good__path
   steps:
   - intent: intent_start
