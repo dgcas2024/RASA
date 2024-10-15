@@ -16,8 +16,14 @@ responses:
   - text: "Em xác nhận là anh đồng ý thanh toán vào ngày 21/10/2024, với số tiền 20.000.000 cho công ty em đúng không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_2:
   - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
-  utter_ghi_nhan_thong_tin_tra_no:
+  utter_ghi_nhan_thong_tin_tra_no_good:
   - text: "Em đã ghi nhận cam kết thanh toán của anh, vui lòng giữ lại biên lai sau khi thanh toán, cần hỗ trợ thêm, anh liên hệ Kênh Zalo FE CREDIT hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
+  utter_ghi_nhan_thong_tin_tra_no_bad:
+  - text: "Em ghi nhận thông tin. Em đã cố gắng hỗ trợ nhưng anh vẫn không đồng ý thanh toán. Công ty sẽ tiếp tục quy trình xử lý tín dụng. anh cần sắp xếp thanh toán càng sớm càng tốt để nhận được những lợi ích cho hợp đồng tín dụng của mình. Cần hỗ trợ thêm, anh vui lòng liên hệ Kênh Zalo FE Credit hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
+  utter_phan_hoi_nhac_no_bad_hoi_ly_do:
+  - text: "Lý do gì mà anh không thanh toán đủ tiền cho công ty đúng hạn vậy ạ?"  
+  utter_phan_hoi_nhac_no_bad_yeu_cau_lan_2:
+  - text:   "Anh vui lòng thanh toán 20.000.000 đồng đúng hạn để tránh việc Hợp đồng của anh phát sinh thêm chi phí ngoài kế hoạch do thanh toán trễ, làm ảnh hưởng đến tài chính và công việc của mình. Nhiều trường hợp Khách hàng khó khăn tuy nhiên vẫn vay mượn người thân/ ứng lương hoặc làm việc bán thời gian để hoàn thành nghĩa vụ thanh toán. Vậy anh sẽ thu xếp thanh toán 20.000.000 đồng đúng hạn chứ ạ?"
   utter_force_end:
   - text: "Tạm biệt quý khách!"
 

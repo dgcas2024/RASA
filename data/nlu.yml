@@ -8,6 +8,8 @@ nlu:
     - alo
 - intent: intent_xac_dinh_khach_hang_good
   examples: |
+    - Ừ, đúng rồi. Ai vậy? Có gì không em?
+    - Ờ, Sao vậy?
     - đúng
     - ừ
     - vâng
@@ -24,18 +26,26 @@ nlu:
     - không phải
 - intent: intent_phan_hoi_nhac_no_good
   examples: |
+    - Ừ, tôi sẽ trả  
     - ừ
     - ok
     - sẽ trả
     - vâng
     - yên tâm
-- intent: intent_phan_hoi_nhac_no_good
+- intent: intent_phan_hoi_nhac_no_bad
   examples: |
+    - Giờ chưa có tiền, từ từ rồi trả!  
     - không
     - hết tiền
     - không có tiền
+- intent: intent_phan_hoi_nhac_no_bad_ly_do
+    - Bữa giờ hơi kẹt, từ từ rồi trả còn lâu mà
+    - Vay không được
+    - Kẹt quá
 - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
   examples: |
+    - Ừ đúng rồi
+    - Ừ rồi
     - ừ
     - ok
     - đúng

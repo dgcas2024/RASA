@@ -23,4 +23,4 @@ stories:
   - user: |
       ok em
     intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - action: utter_ghi_nhan_thong_tin_tra_no
+  - action: utter_ghi_nhan_thong_tin_tra_no_good
