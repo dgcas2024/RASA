@@ -54,7 +54,7 @@ intents:
 
 responses:
   utter_ask_result_step1_xac_dinh_khach_hang:
-  - text: "Chào quý khách ạ, xin hỏi có phải {customer_title} {customer_name} đang nghe máy đúng không ạ?"  
+  - text: "Chào anh/chị, cho em hỏi có phải {customer_title} {customer_name} đang nghe máy đúng không ạ?"  
   utter_nhac_no:
   - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày {customer_debt_due_date}, với số tiền cần thanh toán là {customer_debt_amount} đồng, anh sẽ thanh toán {customer_debt_amount} đúng hạn phải không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_1:
