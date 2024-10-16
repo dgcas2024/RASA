@@ -8,5 +8,5 @@ flows:
     - intent: "intent_start"
     steps:
     - collect: result_step1_xac_dinh_khach_hang
-      # ask_before_filling: true -> khong can, do chi xac dinh 1 lan
-      # utter: utter_ask_result_step1_xac_dinh_khach_hang --> auto
+      ask_before_filling: true
+      utter: utter_ask_result_step1_xac_dinh_khach_hang
