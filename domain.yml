@@ -28,7 +28,7 @@ slots:
     - type: from_intent
       intent: intent_xac_dinh_khach_hang_bad
       value: false
-
+    initial_value: false
   result_dong_y_tra_no_dung_han:
     type: bool
     mappings:
@@ -41,6 +41,7 @@ slots:
     mappings:
     - type: from_entity
       entity: xin_gia_han_ngay_tra_no
+    initial_value: false
 
 
 intents:
