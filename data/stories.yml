@@ -12,7 +12,7 @@ stories:
 - story: good__path
   steps:
   - intent: intent_start
-  - action: utter_xac_dinh_khach_hang
+  - action: utter_ask_result_step1_xac_dinh_khach_hang
   - intent: intent_xac_dinh_khach_hang_good
   - action: utter_nhac_no
   - intent: intent_phan_hoi_nhac_no_good
@@ -25,7 +25,7 @@ stories:
 - story: bad__path
   steps:
   - intent: intent_start
-  - action: utter_xac_dinh_khach_hang
+  - action: utter_ask_result_step1_xac_dinh_khach_hang
   - intent: intent_xac_dinh_khach_hang_good
   - action: utter_nhac_no
   - intent: intent_phan_hoi_nhac_no_bad
