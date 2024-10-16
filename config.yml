@@ -1,4 +1,4 @@
-language: "vi"
+language: "en"
 
 pipeline:
   - name: WhitespaceTokenizer
