@@ -8,6 +8,6 @@ flows:
     - intent: "intent_start"
     steps:
     - collect: result_step1_xac_dinh_khach_hang
-      # ask_before_filling: true
+      ask_before_filling: true
       utter: utter_ask_result_step1_xac_dinh_khach_hang
     - action: utter_nhac_no
