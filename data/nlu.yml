@@ -7,7 +7,7 @@ nlu:
     - nghe
     - alo
 - intent: intent_xac_dinh_khach_hang_good
-  examples: 
+  examples: |
     - ờ
     - đúng
     - ừ
