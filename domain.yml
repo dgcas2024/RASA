@@ -7,7 +7,6 @@ intents:
   - intent_phan_hoi_nhac_no_xac_nhan_lai_good
   - intent_force_end
   - intent_phan_hoi_nhac_no_bad
-  - intent_phan_hoi_nhac_no_bad_ly_do
   - intent_xac_dinh_khach_hang_bad
 
 responses:

@@ -41,10 +41,6 @@ nlu:
     - kẹt quá
     - vay không được
     - từ từ
-# - intent: intent_phan_hoi_nhac_no_bad_ly_do
-#     - Bữa giờ hơi kẹt, từ từ rồi trả còn lâu mà
-#     - Vay không được
-#     - Kẹt quá
 - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
   examples: |
     - Ừ đúng rồi
