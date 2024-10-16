@@ -8,9 +8,9 @@ pipeline:
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
-    lowercase: True
+    lowercase: true
   - name: CountVectorsFeaturizer
-    lowercase: True
+    lowercase: true
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
@@ -28,4 +28,5 @@ policies:
   - name: RulePolicy
     core_fallback_threshold: 0.2
     core_fallback_action_name: "action_default_fallback"
-    enable_fallback_prediction: True
+    enable_fallback_prediction: true
+  - name: FormPolicy

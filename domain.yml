@@ -1,21 +1,64 @@
 ﻿version: "3.1"
 
+entities:
+- xin_gia_han_ngay_tra_no
+
+slots:
+  customer_title:
+    type: categorical
+    values:
+    - anh
+    - chị
+    initial_value: anh
+  customer_name:
+    type: text
+    initial_value: Cù Trọng Xoay
+  customer_debt_due_date:
+    type: text
+    initial_value: 20/10/2024
+  customer_debt_amount:
+    type: text
+    initial_value: "20.000.000"
+  result_step1_xac_dinh_khach_hang:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: intent_xac_dinh_khach_hang_good
+      value: true
+    - type: from_intent
+      intent: intent_xac_dinh_khach_hang_bad
+      value: false
+
+  result_dong_y_tra_no_dung_han:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: intent_phan_hoi_nhac_no_good
+      value: true
+    initial_value: false
+  result_xin_gia_han_ngay_tra_no:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: xin_gia_han_ngay_tra_no
+
+
 intents:
-  - intent_start
-  - intent_xac_dinh_khach_hang_good
-  - intent_phan_hoi_nhac_no_good
-  - intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - intent_force_end
-  - intent_phan_hoi_nhac_no_bad
-  - intent_xac_dinh_khach_hang_bad
+- intent_start
+- intent_xac_dinh_khach_hang_good
+- intent_xac_dinh_khach_hang_bad
+- intent_phan_hoi_nhac_no_good
+- intent_phan_hoi_nhac_no_xac_nhan_lai_good
+- intent_force_end
+- intent_phan_hoi_nhac_no_bad
 
 responses:
-  utter_xac_dinh_khach_hang:
-  - text: "Chào anh, cho em hỏi có phải anh Nguyễn Văn A đang nghe máy đúng không ạ?"  
+  utter_ask_result_step1_xac_dinh_khach_hang:
+  - text: "Chào quý khách ạ, xin hỏi có phải {customer_title} {customer_name} đang nghe máy đúng không ạ?"  
   utter_nhac_no:
-  - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày 21/10/2024, với số tiền cần thanh toán là 20.000.000 đồng, anh sẽ thanh toán 20.000.000 đúng hạn phải không ạ?"
+  - text: "Em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày {customer_debt_due_date}, với số tiền cần thanh toán là {customer_debt_amount} đồng, anh sẽ thanh toán {customer_debt_amount} đúng hạn phải không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_1:
-  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày 21/10/2024, với số tiền 20.000.000 cho công ty em đúng không ạ?"
+  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày {customer_debt_due_date}, với số tiền {customer_debt_amount} cho công ty em đúng không ạ?"
   utter_phan_hoi_nhac_no_good_xac_nhan_lan_2:
   - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
   utter_ghi_nhan_thong_tin_tra_no_good:
@@ -25,7 +68,7 @@ responses:
   utter_phan_hoi_nhac_no_bad_hoi_ly_do:
   - text: "Lý do gì mà anh không thanh toán đủ tiền cho công ty đúng hạn vậy ạ?"  
   utter_phan_hoi_nhac_no_bad_yeu_cau_lan_2:
-  - text:   "Anh vui lòng thanh toán 20.000.000 đồng đúng hạn để tránh việc Hợp đồng của anh phát sinh thêm chi phí ngoài kế hoạch do thanh toán trễ, làm ảnh hưởng đến tài chính và công việc của mình. Nhiều trường hợp Khách hàng khó khăn tuy nhiên vẫn vay mượn người thân/ ứng lương hoặc làm việc bán thời gian để hoàn thành nghĩa vụ thanh toán. Vậy anh sẽ thu xếp thanh toán 20.000.000 đồng đúng hạn chứ ạ?"
+  - text:   "Anh vui lòng thanh toán {customer_debt_amount} đồng đúng hạn để tránh việc Hợp đồng của anh phát sinh thêm chi phí ngoài kế hoạch do thanh toán trễ, làm ảnh hưởng đến tài chính và công việc của mình. Nhiều trường hợp Khách hàng khó khăn tuy nhiên vẫn vay mượn người thân/ ứng lương hoặc làm việc bán thời gian để hoàn thành nghĩa vụ thanh toán. Vậy anh sẽ thu xếp thanh toán {customer_debt_amount} đồng đúng hạn chứ ạ?"
   utter_nham_so_xin_loi_vi_lam_phien:
   - text: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
   utter_force_end:

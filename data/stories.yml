@@ -2,35 +2,35 @@ version: "3.1"
 
 stories:
 
-- story: bad__nham_so
-  steps:
-  - intent: intent_start
-  - action: utter_xac_dinh_khach_hang
-  - intent: intent_xac_dinh_khach_hang_bad
-  - action: utter_nham_so_xin_loi_vi_lam_phien
-
-- story: good__path
-  steps:
-  - intent: intent_start
-  - action: utter_xac_dinh_khach_hang
-  - intent: intent_xac_dinh_khach_hang_good
-  - action: utter_nhac_no
-  - intent: intent_phan_hoi_nhac_no_good
-  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_1
-  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_2
-  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - action: utter_ghi_nhan_thong_tin_tra_no_good
-  
-- story: bad__path
-  steps:
-  - intent: intent_start
-  - action: utter_xac_dinh_khach_hang
-  - intent: intent_xac_dinh_khach_hang_good
-  - action: utter_nhac_no
-  - intent: intent_phan_hoi_nhac_no_bad
-  - action: utter_phan_hoi_nhac_no_bad_hoi_ly_do
-  - intent: intent_phan_hoi_nhac_no_bad
-  - action: utter_phan_hoi_nhac_no_bad_yeu_cau_lan_2
-  - intent: intent_phan_hoi_nhac_no_bad
-  - action: utter_ghi_nhan_thong_tin_tra_no_bad
+#- story: bad__nham_so
+#  steps:
+#  - intent: intent_start
+#  - action: utter_xac_dinh_khach_hang
+#  - intent: intent_xac_dinh_khach_hang_bad
+#  - action: utter_nham_so_xin_loi_vi_lam_phien
+#
+#- story: good__path
+#  steps:
+#  - intent: intent_start
+#  - action: utter_xac_dinh_khach_hang
+#  - intent: intent_xac_dinh_khach_hang_good
+#  - action: utter_nhac_no
+#  - intent: intent_phan_hoi_nhac_no_good
+#  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_1
+#  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+#  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_2
+#  - intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+#  - action: utter_ghi_nhan_thong_tin_tra_no_good
+#  
+#- story: bad__path
+#  steps:
+#  - intent: intent_start
+#  - action: utter_xac_dinh_khach_hang
+#  - intent: intent_xac_dinh_khach_hang_good
+#  - action: utter_nhac_no
+#  - intent: intent_phan_hoi_nhac_no_bad
+#  - action: utter_phan_hoi_nhac_no_bad_hoi_ly_do
+#  - intent: intent_phan_hoi_nhac_no_bad
+#  - action: utter_phan_hoi_nhac_no_bad_yeu_cau_lan_2
+#  - intent: intent_phan_hoi_nhac_no_bad
+#  - action: utter_ghi_nhan_thong_tin_tra_no_bad
