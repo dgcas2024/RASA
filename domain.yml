@@ -1,25 +1,38 @@
 ﻿version: "3.1"
 
 entities:
-- xin_gia_han_ngay_tra_no
+- entity_customer_title
+- entity_customer_name
+- entity_customer_debt_due_date
+- entity_customer_debt_amount
+- entity_xin_gia_han_ngay_tra_no
 
 slots:
-  customer_title:
-    type: categorical
-    values:
-    - anh
-    - chị
+  slot_customer_title:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: entity_customer_title
     initial_value: anh
-  customer_name:
+  slot_customer_name:
     type: text
+    mappings:
+    - type: from_entity
+      entity: entity_customer_name
     initial_value: Cù Trọng Xoay
-  customer_debt_due_date:
+  slot_customer_debt_due_date:
     type: text
+    mappings:
+    - type: from_entity
+      entity: entity_customer_debt_due_date
     initial_value: 20/10/2024
-  customer_debt_amount:
+  slot_customer_debt_amount:
     type: text
+    mappings:
+    - type: from_entity
+      entity: entity_customer_debt_amount
     initial_value: "20.000.000"
-  result_step1_xac_dinh_khach_hang:
+  slot_xac_dinh_khach_hang:
     type: bool
     mappings:
     - type: from_intent
@@ -29,7 +42,7 @@ slots:
       intent: intent_xac_dinh_khach_hang_bad
       value: false
     initial_value: false
-  result_dong_y_tra_no_dung_han:
+  slot_dong_y_tra_no_dung_han:
     type: bool
     mappings:
     - type: from_intent
@@ -39,11 +52,11 @@ slots:
       intent: intent_phan_hoi_nhac_no_bad
       value: false
     initial_value: false
-  result_xin_gia_han_ngay_tra_no:
+  slot_xin_gia_han_ngay_tra_no:
     type: text
     mappings:
     - type: from_entity
-      entity: xin_gia_han_ngay_tra_no
+      entity: entity_xin_gia_han_ngay_tra_no
     initial_value: false
 
 
