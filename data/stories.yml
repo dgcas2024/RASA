@@ -2,7 +2,7 @@ version: "3.1"
 
 stories:
 
-- story: bad___nham_so
+- story: bad__nham_so
   steps:
   - intent: intent_start
   - action: utter_ask_result_step1_xac_dinh_khach_hang

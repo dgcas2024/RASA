@@ -5,7 +5,7 @@ flows:
     description: "Nhắc nợ khách hàng"
     always_include_in_prompt: true
     nlu_trigger:
-    - intent: "intent_force_end"
+    - intent: "intent_start"
     steps:
     - collect: result_xac_dinh_khach_hang
       ask_before_filling: true
