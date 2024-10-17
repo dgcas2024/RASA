@@ -6,62 +6,48 @@ nlu:
     - a lô
     - nghe
     - alo
+    - alo ai đó
+    - ai vậy
+    - nghe ạ
 - intent: intent_xac_dinh_khach_hang_good
   examples: |
-    - ờ
-    - đúng
-    - ừ
-    - vâng
-    - dạ
+    - ờ đúng
+    - ừ đúng
+    - đúng rồi ạ
+    - vâng, đúng rồi
+    - dạ, đúng rồi
     - chị đây
     - anh đây
     - em đây
+    - là anh đây, có gì không em
     - tôi đây
-    - phải
-    - là tôi
-    - sao vậy
+    - phải, là anh đây
+    - là tôi đây, có gì vậy
+    - sao vậy, tôi đây
     - có gì không
 - intent: intent_xac_dinh_khach_hang_bad
   examples: |
-    - nhầm
+    - nhầm máy rồi
     - không phải
+    - nhầm rồi
+    - nhầm người rồi
 - intent: intent_phan_hoi_tra_no_dung_han_good
   examples: |
-    - ừ
-    - được
-    - ok
-    - sẽ trả
-    - vâng
-    - yên tâm
+    - ok anh sẽ trả
+    - được rồi
+    - ok chị sẽ trả
+    - yên tâm nhé
+    - vâng ạ
+    - ok em
 - intent: intent_phan_hoi_tra_no_dung_han_bad
   examples: |
     - chưa có tiền
-    - không
-    - hết tiền
+    - không trả 
+    - hết tiền rồi
     - không có tiền
-    - kẹt quá
+    - đang kẹt quá
     - vay không được
-    - từ từ
-- intent: intent_phan_hoi_tra_no_dung_han_xac_nhan_lai_good
-  examples: |
-    - ừ
-    - ok
-    - đúng
-    - sẽ trả
-    - vâng
-    - yên tâm
-    - chắc chắn
-    - được rồi
-- intent: intent_phan_hoi_tra_no_dung_han_xac_nhan_lai_bad
-  examples: |
-    - ừ
-    - ok
-    - đúng
-    - sẽ trả
-    - vâng
-    - yên tâm
-    - chắc chắn
-    - được rồi
+    - đừng gọi nữa
 - intent: intent_force_end
   examples: |
     - cút
