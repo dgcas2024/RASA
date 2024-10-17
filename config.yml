@@ -18,7 +18,7 @@ pipeline:
     epochs: 100
   - name: FallbackClassifier
     threshold: 0.2
-  - name: NLUCommandAdapter
+  #- name: NLUCommandAdapter
 
 policies:
   - name: MemoizationPolicy
