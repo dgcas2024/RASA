@@ -8,6 +8,7 @@ flows:
     - intent: "intent_start"
     steps:
     - collect: slot_xac_dinh_khach_hang
+      utter: utter_xac_dinh_khach_hang
       ask_before_filling: true
       reset_after_flow_ends: false
       next:
@@ -20,7 +21,7 @@ flows:
       collect: slot_dong_y_tra_no_dung_han
       ask_before_filling: true
       reset_after_flow_ends: false
-      utter: utter_nhac_no
+      utter: utter_nhac_kh_tra_no_dung_han
       #next:
       #- if: slots.slot_dong_y_tra_no_dung_han
       #  then:

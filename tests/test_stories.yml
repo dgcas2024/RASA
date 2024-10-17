@@ -2,25 +2,9 @@
 #### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
 
 stories:
-- story: good__path
+- story: start
   steps:
   - user: |
       alo
     intent: intent_start
   - action: utter_xac_dinh_khach_hang
-  - user: |
-      ừ em
-    intent: intent_xac_dinh_khach_hang_good
-  - action: utter_nhac_no
-  - user: |
-      ok em
-    intent: intent_phan_hoi_nhac_no_good
-  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_1
-  - user: |
-      ok em
-    intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - action: utter_phan_hoi_nhac_no_good_xac_nhan_lan_2
-  - user: |
-      ok em
-    intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
-  - action: utter_ghi_nhan_thong_tin_tra_no_good

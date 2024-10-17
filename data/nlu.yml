@@ -25,7 +25,7 @@ nlu:
   examples: |
     - nhầm
     - không phải
-- intent: intent_phan_hoi_nhac_no_good
+- intent: intent_phan_hoi_tra_no_dung_han_good
   examples: |
     - ừ
     - được
@@ -33,7 +33,7 @@ nlu:
     - sẽ trả
     - vâng
     - yên tâm
-- intent: intent_phan_hoi_nhac_no_bad
+- intent: intent_phan_hoi_tra_no_dung_han_bad
   examples: |
     - chưa có tiền
     - không
@@ -42,7 +42,17 @@ nlu:
     - kẹt quá
     - vay không được
     - từ từ
-- intent: intent_phan_hoi_nhac_no_xac_nhan_lai_good
+- intent: intent_phan_hoi_tra_no_dung_han_xac_nhan_lai_good
+  examples: |
+    - ừ
+    - ok
+    - đúng
+    - sẽ trả
+    - vâng
+    - yên tâm
+    - chắc chắn
+    - được rồi
+- intent: intent_phan_hoi_tra_no_dung_han_xac_nhan_lai_bad
   examples: |
     - ừ
     - ok
