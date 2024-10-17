@@ -35,6 +35,9 @@ slots:
     - type: from_intent
       intent: intent_phan_hoi_nhac_no_good
       value: true
+    - type: from_intent
+      intent: intent_phan_hoi_nhac_no_bad
+      value: false
     initial_value: false
   result_xin_gia_han_ngay_tra_no:
     type: text
@@ -49,9 +52,9 @@ intents:
 - intent_xac_dinh_khach_hang_good
 - intent_xac_dinh_khach_hang_bad
 - intent_phan_hoi_nhac_no_good
+- intent_phan_hoi_nhac_no_bad
 - intent_phan_hoi_nhac_no_xac_nhan_lai_good
 - intent_force_end
-- intent_phan_hoi_nhac_no_bad
 
 responses:
   utter_ask_result_step1_xac_dinh_khach_hang:
