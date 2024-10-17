@@ -17,8 +17,7 @@ flows:
             next: END
       - else: step_nhac_kh_tra_no_dung_han
     - id: step_nhac_kh_tra_no_dung_han
-      nope: true
-    - collect: slot_dong_y_tra_no_dung_han
+      collect: slot_dong_y_tra_no_dung_han
       ask_before_filling: true
       reset_after_flow_ends: false
       utter: utter_nhac_no
