@@ -21,6 +21,7 @@ pipeline:
   - name: NLUCommandAdapter
 
 policies:
+  - name: FlowPolicy    
   - name: MemoizationPolicy
     max_history: 15
   - name: TEDPolicy
@@ -30,4 +31,3 @@ policies:
     core_fallback_threshold: 0.2
     core_fallback_action_name: "action_default_fallback"
     enable_fallback_prediction: true
-  - name: FlowPolicy
