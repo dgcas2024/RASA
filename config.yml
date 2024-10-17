@@ -18,10 +18,10 @@ pipeline:
     epochs: 100
   - name: FallbackClassifier
     threshold: 0.2
-  - name: NLUCommandAdapter
+  #- name: NLUCommandAdapter
 
 policies:
-  - name: FlowPolicy    
+  #- name: FlowPolicy    
   - name: MemoizationPolicy
     max_history: 15
   - name: TEDPolicy
