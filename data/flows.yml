@@ -10,11 +10,12 @@ flows:
     - collect: result_step1_xac_dinh_khach_hang
       ask_before_filling: true
       reset_after_flow_ends: false
-      next:
-      - if: not slots.result_step1_xac_dinh_khach_hang
-        then:
-          - action: utter_nham_so_xin_loi_vi_lam_phien
-            next: END
+    #  next:
+    #  - if: not slots.result_step1_xac_dinh_khach_hang
+    #    then:
+    #      - action: utter_nham_so_xin_loi_vi_lam_phien
+    #        next: END
+    #    else:
     #- action: utter_nhac_no
     #- collect: result_dong_y_tra_no_dung_han
     #  ask_before_filling: true
