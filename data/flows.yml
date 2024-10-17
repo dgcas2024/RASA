@@ -16,7 +16,7 @@ flows:
           - action: utter_nham_so_xin_loi_vi_lam_phien
             next: END
         else:
-    - action: utter_nhac_no
+          - action: utter_nhac_no
     - collect: result_dong_y_tra_no_dung_han
       ask_before_filling: true
       reset_after_flow_ends: false
