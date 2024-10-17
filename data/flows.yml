@@ -21,8 +21,8 @@ flows:
       ask_before_filling: true
       reset_after_flow_ends: false
       utter: utter_nhac_no
-      next:
-      - if: slots.result_dong_y_tra_no_dung_han
-        then:
-          - action: utter_nham_so_xin_loi_vi_lam_phien
-            next:
+      #next:
+      #- if: slots.result_dong_y_tra_no_dung_han
+      #  then:
+      #    - action: utter_nham_so_xin_loi_vi_lam_phien
+      #      next:
