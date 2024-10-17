@@ -51,3 +51,4 @@ nlu:
 - intent: intent_force_end
   examples: |
     - cút
+    - biến

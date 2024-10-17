@@ -19,11 +19,50 @@ flows:
       - else: step_nhac_kh_tra_no_dung_han
     - id: step_nhac_kh_tra_no_dung_han
       collect: slot_dong_y_tra_no_dung_han
+      utter: utter_nhac_kh_tra_no_dung_han
       ask_before_filling: true
       reset_after_flow_ends: false
-      utter: utter_nhac_kh_tra_no_dung_han
-      #next:
-      #- if: slots.slot_dong_y_tra_no_dung_han
-      #  then:
-      #    - action: utter_nham_so_xin_loi_vi_lam_phien
-      #      next:
+      next:
+      - if: slots.slot_dong_y_tra_no_dung_han
+        then: tra_no_dung_han_good_xac_nhan_lan_1
+      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+    - id: tra_no_dung_han_good_xac_nhan_lan_1
+      collect: slot_dong_y_tra_no_dung_han
+      ask_before_filling: true
+      reset_after_flow_ends: false
+      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
+      next:
+      - if: slots.slot_dong_y_tra_no_dung_han
+        then: tra_no_dung_han_good_xac_nhan_lan_2
+      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+    - id: tra_no_dung_han_good_xac_nhan_lan_2
+      collect: slot_dong_y_tra_no_dung_han
+      ask_before_filling: true
+      reset_after_flow_ends: false
+      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
+      next:
+      - if: slots.slot_dong_y_tra_no_dung_han
+        then:
+          - action: utter_ghi_nhan_thong_tin_tra_no_good
+            next: END
+      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+    - id: tra_no_dung_han_bad_xac_nhan_lan_1
+      collect: slot_dong_y_tra_no_dung_han
+      ask_before_filling: true
+      reset_after_flow_ends: false
+      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
+      next:
+      - if: not slots.slot_dong_y_tra_no_dung_han
+        then: tra_no_dung_han_bad_xac_nhan_lan_2
+      - else: tra_no_dung_han_good_xac_nhan_lan_1
+    - id: tra_no_dung_han_bad_xac_nhan_lan_2
+      collect: slot_dong_y_tra_no_dung_han
+      ask_before_filling: true
+      reset_after_flow_ends: false
+      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
+      next:
+      - if: not slots.slot_dong_y_tra_no_dung_han
+        then:
+          - action: utter_ghi_nhan_thong_tin_tra_no_bad
+            next: END
+      - else: tra_no_dung_han_good_xac_nhan_lan_1
