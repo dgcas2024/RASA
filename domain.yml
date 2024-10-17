@@ -1,50 +1,50 @@
 ﻿version: "3.1"
 
-#entities:
-#- xin_gia_han_ngay_tra_no
-#
-#slots:
-#  customer_title:
-#    type: categorical
-#    values:
-#    - anh
-#    - chị
-#    initial_value: anh
-#  customer_name:
-#    type: text
-#    initial_value: Cù Trọng Xoay
-#  customer_debt_due_date:
-#    type: text
-#    initial_value: 20/10/2024
-#  customer_debt_amount:
-#    type: text
-#    initial_value: "20.000.000"
-#  result_step1_xac_dinh_khach_hang:
-#    type: bool
-#    mappings:
-#    - type: from_intent
-#      intent: intent_xac_dinh_khach_hang_good
-#      value: true
-#    - type: from_intent
-#      intent: intent_xac_dinh_khach_hang_bad
-#      value: false
-#    initial_value: false
-#  result_dong_y_tra_no_dung_han:
-#    type: bool
-#    mappings:
-#    - type: from_intent
-#      intent: intent_phan_hoi_nhac_no_good
-#      value: true
-#    - type: from_intent
-#      intent: intent_phan_hoi_nhac_no_bad
-#      value: false
-#    initial_value: false
-#  result_xin_gia_han_ngay_tra_no:
-#    type: text
-#    mappings:
-#    - type: from_entity
-#      entity: xin_gia_han_ngay_tra_no
-#    initial_value: false
+entities:
+- xin_gia_han_ngay_tra_no
+
+slots:
+  customer_title:
+    type: categorical
+    values:
+    - anh
+    - chị
+    initial_value: anh
+  customer_name:
+    type: text
+    initial_value: Cù Trọng Xoay
+  customer_debt_due_date:
+    type: text
+    initial_value: 20/10/2024
+  customer_debt_amount:
+    type: text
+    initial_value: "20.000.000"
+  result_step1_xac_dinh_khach_hang:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: intent_xac_dinh_khach_hang_good
+      value: true
+    - type: from_intent
+      intent: intent_xac_dinh_khach_hang_bad
+      value: false
+    initial_value: false
+  result_dong_y_tra_no_dung_han:
+    type: bool
+    mappings:
+    - type: from_intent
+      intent: intent_phan_hoi_nhac_no_good
+      value: true
+    - type: from_intent
+      intent: intent_phan_hoi_nhac_no_bad
+      value: false
+    initial_value: false
+  result_xin_gia_han_ngay_tra_no:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: xin_gia_han_ngay_tra_no
+    initial_value: false
 
 
 intents:
