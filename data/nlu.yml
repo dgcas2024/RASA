@@ -3,12 +3,13 @@
 nlu:
 - intent: intent_start
   examples: |
-    - a lô
-    - nghe
-    - alo
     - alo ai đó
+    - nghe nè
+    - alo
+    - alo ai thế
     - ai vậy
     - nghe ạ
+    - alo ạ
 - intent: intent_xac_dinh_khach_hang_good
   examples: |
     - ờ đúng
@@ -24,7 +25,13 @@ nlu:
     - phải, là anh đây
     - là tôi đây, có gì vậy
     - sao vậy, tôi đây
-    - có gì không
+    - ừ, có gì không
+    - anh đây, có gì không
+    - tôi đây, có gì không
+    - chị nè
+    - tôi nè
+    - chính xác, có gì không
+    - ừ, sao đấy
 - intent: intent_xac_dinh_khach_hang_bad
   examples: |
     - nhầm máy rồi
@@ -33,12 +40,13 @@ nlu:
     - nhầm người rồi
 - intent: intent_phan_hoi_tra_no_dung_han_good
   examples: |
-    - ok anh sẽ trả
+    - ok, anh sẽ trả
     - được rồi
     - ok chị sẽ trả
     - yên tâm nhé
     - vâng ạ
     - ok em
+    - yên tâm, anh sẽ trả
 - intent: intent_phan_hoi_tra_no_dung_han_bad
   examples: |
     - chưa có tiền
@@ -47,8 +55,20 @@ nlu:
     - không có tiền
     - đang kẹt quá
     - vay không được
-    - đừng gọi nữa
+    - dẹp đi, không trả
+    - không trả là không trả
+    - đéo trả nhé
+    - đừng mơ
+    - không bao giờ trả
+    - không trả đâu
+    - tiền đâu mà trả
+    - đang nghèo không trả
+    - đang khó khăn
+    - anh thích không trả đấy
+    - tao đéo trả
+    - trả gì mà trả
 - intent: intent_force_end
   examples: |
     - cút
-    - biến
+    - biến đê
+    - đùng gọi nữa nhá
