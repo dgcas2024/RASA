@@ -32,6 +32,7 @@ nlu:
     - tôi nè
     - chính xác, có gì không
     - ừ, sao đấy
+    - ừ đúng rồi
 - intent: intent_xac_dinh_khach_hang_bad
   examples: |
     - nhầm máy rồi
@@ -47,6 +48,17 @@ nlu:
     - vâng ạ
     - ok em
     - yên tâm, anh sẽ trả
+    - anh sẽ thanh toán
+    - đồng ý
+    - anh đồng ý
+    - nhất trí
+    - ok để anh thanh toán
+    - anh sẽ chuẩn bị
+    - ok để anh chuẩn bị
+    - chị sẽ thanh toán
+    - ờ, đúng rồi
+    - ờ, tôi sẽ trả
+    - ờ, chị sẽ trả
 - intent: intent_phan_hoi_tra_no_dung_han_bad
   examples: |
     - chưa có tiền
