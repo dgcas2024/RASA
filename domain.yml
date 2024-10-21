@@ -1,6 +1,7 @@
 ﻿version: "3.1"
 
 entities:
+- entity_receiver_name
 - entity_customer_title
 - entity_customer_name
 - entity_customer_debt_due_date
@@ -8,6 +9,11 @@ entities:
 - entity_xin_gia_han_ngay_tra_no
 
 slots:
+  slot_receiver_name:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: entity_receiver_name
   slot_customer_title:
     type: text
     mappings:

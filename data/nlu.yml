@@ -33,6 +33,14 @@ nlu:
     - chính xác, có gì không
     - ừ, sao đấy
     - ừ đúng rồi
+    - anh [Nam]{"entity": "entity_receiver_name"} đây
+    - anh [Hồng]{"entity": "entity_receiver_name"} đây
+    - anh [Nhân]{"entity": "entity_receiver_name"} đây
+    - anh [Hùng]{"entity": "entity_receiver_name"} đây
+    - chị là [Hương]{"entity": "entity_receiver_name"}
+    - tôi là [Nga]{"entity": "entity_receiver_name"}
+    - tôi là [Ngọc]{"entity": "entity_receiver_name"}
+    - chị là [Huyền]{"entity": "entity_receiver_name"}
 - intent: intent_xac_dinh_khach_hang_bad
   examples: |
     - nhầm máy rồi
