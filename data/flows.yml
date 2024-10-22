@@ -11,6 +11,7 @@ flows:
       utter: utter_xac_dinh_khach_hang
       ask_before_filling: true
       reset_after_flow_ends: false
+    - collect: slot_receiver_name
       next:
       - if: not slots.slot_xac_dinh_khach_hang
         then:
@@ -66,3 +67,35 @@ flows:
           - action: utter_ghi_nhan_thong_tin_tra_no_bad
             next: END
       - else: tra_no_dung_han_good_xac_nhan_lan_1
+  
+  #step_chao_hoi_va_nhac_no:
+  #  description: "Chào hỏi khách hàng"
+  #  always_include_in_prompt: true
+  #  nlu_trigger:
+  #  - intent: "intent_start"
+  #  steps:
+  #  - collect: slot_xac_dinh_khach_hang
+  #    utter: utter_xac_dinh_khach_hang
+  #    ask_before_filling: true
+  #    reset_after_flow_ends: false
+  #    next:
+  #    - if: not slots.slot_xac_dinh_khach_hang
+  #      then:
+  #        - action: utter_nham_so_xin_loi_vi_lam_phien
+  #          next: END
+  #
+  #step_nhac_kh_tra_no_dung_han:
+  #  description: "Nhắc khách hàng trả nợ đúng hạn"
+  #  always_include_in_prompt: true
+  #  nlu_trigger:
+  #  - intent: "intent_start"
+  #  steps:
+  #  - collect: slot_xac_dinh_khach_hang
+  #    utter: utter_xac_dinh_khach_hang
+  #    ask_before_filling: true
+  #    reset_after_flow_ends: false
+  #    next:
+  #    - if: not slots.slot_xac_dinh_khach_hang
+  #      then:
+  #        - action: utter_nham_so_xin_loi_vi_lam_phien
+  #          next: END
