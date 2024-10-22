@@ -98,6 +98,8 @@ responses:
   - text: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
   utter_force_end:
   - text: "Tạm biệt quý khách!"
+  utter_can_do_something_else:
+    - text: ""
 
 session_config:
   session_expiration_time: 60
