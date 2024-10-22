@@ -11,7 +11,6 @@ flows:
       utter: utter_xac_dinh_khach_hang
       ask_before_filling: true
       reset_after_flow_ends: false
-    - collect: slot_receiver_name
       next:
       - if: not slots.slot_xac_dinh_khach_hang
         then:
