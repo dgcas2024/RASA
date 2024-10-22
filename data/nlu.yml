@@ -10,15 +10,11 @@ nlu:
     - ai vậy
     - nghe ạ
     - alo ạ
-- intent: intent_xac_dinh_khach_hang_good
+    - lô
+    - nghe
+
+- intent: intent_good__xac_nhan_danh_tinh
   examples: |
-    - ờ đúng
-    - ừ đúng
-    - đúng rồi
-    - ừ em
-    - đúng rồi ạ
-    - vâng, đúng rồi
-    - dạ, đúng rồi
     - chị đây
     - anh đây
     - em đây
@@ -28,51 +24,94 @@ nlu:
     - là tôi đây, có gì vậy
     - sao vậy, tôi đây
     - ừ, có gì không
+    - vâng, có gì không
     - anh đây, có gì không
     - tôi đây, có gì không
     - chị nè
     - tôi nè
+    - vâng, tôi đây
     - chính xác, có gì không
     - ừ, sao đấy
-    - ừ đúng rồi
     # - https://learning.rasa.com/archive/conversational-ai-with-rasa/entities/
     - anh [Nam](entity_receiver_name) đây
     - anh [Hồng](entity_receiver_name) đây
     - anh [Lộc](entity_receiver_name) đây
     - chị [Nga](entity_receiver_name) đây
     - anh [Long](entity_receiver_name) đây
-    - ở, anh [Nhân](entity_receiver_name) đây
+    - ờ, anh [Nhân](entity_receiver_name) đây
     - anh [Hùng](entity_receiver_name) đây
     - chị [Hương](entity_receiver_name) đây
     - chị [Lan](entity_receiver_name) đây
-- intent: intent_xac_dinh_khach_hang_bad
+    - ừ, anh là [Hồng](entity_receiver_name) đây
+    - ừ, chị là [Trang](entity_receiver_name) đây
+    - ừ, chị [Thảo](entity_receiver_name) nè
+
+- intent: intent_good__xac_nhan_thanh_toan
+  examples: |
+    - anh sẽ thanh toán
+    - chị sẽ thanh toán
+    - tôi sẽ thanh toán
+    - anh sẽ trả
+    - chị sẽ trả
+    - tôi sẽ trả
+    - được rồi, anh sẽ thanh toán
+    - được rồi, chị sẽ thanh toán
+    - được rồi, tôi sẽ thanh toán
+    - được rồi, anh sẽ trả
+    - được rồi, chị sẽ trả
+    - được rồi, tôi sẽ trả
+    - ok, em sẽ trả
+    - em sẽ trả
+    - rồi rồi, để tôi trả
+    - rồi rồi, để em trả
+    - yên tâm, để em trả
+    - yên tâm, tôi sẽ trả
+    - yêm tâm đi, tôi sẽ thanh toán
+    - có ai nói là không trả đâu
+    - có ai bảo là không trả đâu
+    - ừ trả, yên tâm đi
+    - ừ tôi trả
+    - ừ chị trả
+    - ở chị thanh toán
+
+- intent: intent_good__xac_nhan_chung
+  examples: |
+    - ừ đúng rồi
+    - anh xác nhận
+    - chị xác nhận
+    - ok nhé
+    - chị ok
+    - anh ok
+    - được rồi
+    - đúng rồi nhé
+    - ok nha
+    - ok em
+    - xác nhận nhé
+    - chắc chắn nhé
+    - chắc chắn rồi
+    - vâng
+    - đúng nhé
+    - đúng vậy
+    - đúng
+    - ok
+    - ừ
+    - đúng rồi
+    - tất nhiên là đúng
+    - ok anh xác nhận
+    - anh xác nhận nha
+
+- intent: intent_bad__xac_nhan_danh_tinh
   examples: |
     - nhầm máy rồi
     - không phải
     - nhầm rồi
     - nhầm người rồi
-- intent: intent_phan_hoi_tra_no_dung_han_good
-  examples: |
-    - ok, anh sẽ trả
-    - được rồi
-    - được rồi, nói nhiều quá
-    - ok chị sẽ trả
-    - yên tâm nhé
-    - vâng ạ
-    - ok em
-    - yên tâm, anh sẽ trả
-    - anh sẽ thanh toán
-    - đồng ý
-    - anh đồng ý
-    - nhất trí
-    - ok để anh thanh toán
-    - anh sẽ chuẩn bị
-    - ok để anh chuẩn bị
-    - chị sẽ thanh toán
-    - ờ, nói nhiều quá
-    - ờ, tôi sẽ trả
-    - ờ, chị sẽ trả
-- intent: intent_phan_hoi_tra_no_dung_han_bad
+    - không, anh là [Nam](entity_receiver_name)
+    - không, chị là [Vân](entity_receiver_name)
+    - không, chị là [Trang](entity_receiver_name)
+    - lộn rồi
+
+- intent: intent_bad__xac_nhan_thanh_toan
   examples: |
     - chưa có tiền
     - không trả 
@@ -83,7 +122,11 @@ nlu:
     - dẹp đi, không trả
     - không trả là không trả
     - đéo trả nhé
-    - đừng mơ
+    - năm sau trả
+    - mùa quýt trả
+    - tết công gô trả
+    - dẹp đi không trả
+    - không muốn trả
     - không bao giờ trả
     - không trả đâu
     - tiền đâu mà trả
@@ -92,8 +135,34 @@ nlu:
     - anh thích không trả đấy
     - tao đéo trả
     - trả gì mà trả
+    - bị bùng rồi
+    - không trả thì làm gì được tao
+    - đéo trả thì làm gì được nhau
+    - không trả đấy
+    - không thanh toán
+    - đéo thanh toán
+    - thanh toán cái gì mà thanh toán
+    - thanh toán gì mà thanh toán
+    - trả gì mà trả
+    - bữa này hơi kẹt
+    - từ từ rồi trả
+
+- intent: intent_bad__xac_nhan_chung
+  examples: |
+    - không nhé
+    - không
+    - không xác nhận
+    - anh không xác nhận
+    - chị không xác nhận
+    - tôi không xác nhận
+    - không phải
+    - không phải đâu
+    - không phải nhé
+
 - intent: intent_force_end
   examples: |
     - cút
-    - biến đê
-    - đùng gọi nữa nhá
+    - cút đi
+    - biến đi
+    - fdsgs
+    - sjaff

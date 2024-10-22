@@ -1,100 +1,93 @@
 ﻿version: "3.1"
 
 flows:
-  main_flow:
-    description: "Nhắc nợ khách hàng"
+#  main_flow:
+#    description: "Nhắc nợ khách hàng"
+#    always_include_in_prompt: true
+#    #nlu_trigger:
+#    #- intent: "intent_start"
+#    steps:
+#    - collect: slot_xac_dinh_khach_hang
+#      utter: utter_xac_dinh_khach_hang
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      next:
+#      - if: not slots.slot_xac_dinh_khach_hang
+#        then:
+#          - action: utter_nham_so_xin_loi_vi_lam_phien
+#            next: END
+#      - else: step_nhac_kh_tra_no_dung_han
+#    - id: step_nhac_kh_tra_no_dung_han
+#      collect: slot_dong_y_tra_no_dung_han
+#      utter: utter_nhac_kh_tra_no_dung_han
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      next:
+#      - if: slots.slot_dong_y_tra_no_dung_han
+#        then: tra_no_dung_han_good_xac_nhan_lan_1
+#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+#    - id: tra_no_dung_han_good_xac_nhan_lan_1
+#      collect: slot_dong_y_tra_no_dung_han
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
+#      next:
+#      - if: slots.slot_dong_y_tra_no_dung_han
+#        then: tra_no_dung_han_good_xac_nhan_lan_2
+#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+#    - id: tra_no_dung_han_good_xac_nhan_lan_2
+#      collect: slot_dong_y_tra_no_dung_han
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
+#      next:
+#      - if: slots.slot_dong_y_tra_no_dung_han
+#        then:
+#          - action: utter_ghi_nhan_thong_tin_tra_no_good
+#            next: END
+#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
+#    - id: tra_no_dung_han_bad_xac_nhan_lan_1
+#      collect: slot_dong_y_tra_no_dung_han
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
+#      next:
+#      - if: not slots.slot_dong_y_tra_no_dung_han
+#        then: tra_no_dung_han_bad_xac_nhan_lan_2
+#      - else: tra_no_dung_han_good_xac_nhan_lan_1
+#    - id: tra_no_dung_han_bad_xac_nhan_lan_2
+#      collect: slot_dong_y_tra_no_dung_han
+#      ask_before_filling: true
+#      reset_after_flow_ends: false
+#      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
+#      next:
+#      - if: not slots.slot_dong_y_tra_no_dung_han
+#        then:
+#          - action: utter_ghi_nhan_thong_tin_tra_no_bad
+#            next: END
+#      - else: tra_no_dung_han_good_xac_nhan_lan_1
+  
+  step_chao_hoi_va_nhac_no:
+    description: "Chào hỏi khách hàng, nếu sai thì xin lỗi và cúp máy, nếu đúng thì nhắc khách hàng trả nợ"
     always_include_in_prompt: true
     nlu_trigger:
     - intent: "intent_start"
     steps:
-    - collect: slot_xac_dinh_khach_hang
-      utter: utter_xac_dinh_khach_hang
+    - collect: slot_xac_nhan_khach_hang
+      utter: utter_xac_nhan_khach_hang
       ask_before_filling: true
       reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_chao_hoi_va_nhac_no"
       next:
-      - if: not slots.slot_xac_dinh_khach_hang
+      - if: not slots.slot_xac_nhan_khach_hang
         then:
           - action: utter_nham_so_xin_loi_vi_lam_phien
-            next: END
-      - else: step_nhac_kh_tra_no_dung_han
-    - id: step_nhac_kh_tra_no_dung_han
-      collect: slot_dong_y_tra_no_dung_han
-      utter: utter_nhac_kh_tra_no_dung_han
-      ask_before_filling: true
-      reset_after_flow_ends: false
-      next:
-      - if: slots.slot_dong_y_tra_no_dung_han
-        then: tra_no_dung_han_good_xac_nhan_lan_1
-      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-    - id: tra_no_dung_han_good_xac_nhan_lan_1
-      collect: slot_dong_y_tra_no_dung_han
-      ask_before_filling: true
-      reset_after_flow_ends: false
-      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
-      next:
-      - if: slots.slot_dong_y_tra_no_dung_han
-        then: tra_no_dung_han_good_xac_nhan_lan_2
-      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-    - id: tra_no_dung_han_good_xac_nhan_lan_2
-      collect: slot_dong_y_tra_no_dung_han
-      ask_before_filling: true
-      reset_after_flow_ends: false
-      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
-      next:
-      - if: slots.slot_dong_y_tra_no_dung_han
-        then:
-          - action: utter_ghi_nhan_thong_tin_tra_no_good
-            next: END
-      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-    - id: tra_no_dung_han_bad_xac_nhan_lan_1
-      collect: slot_dong_y_tra_no_dung_han
-      ask_before_filling: true
-      reset_after_flow_ends: false
-      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
-      next:
-      - if: not slots.slot_dong_y_tra_no_dung_han
-        then: tra_no_dung_han_bad_xac_nhan_lan_2
-      - else: tra_no_dung_han_good_xac_nhan_lan_1
-    - id: tra_no_dung_han_bad_xac_nhan_lan_2
-      collect: slot_dong_y_tra_no_dung_han
-      ask_before_filling: true
-      reset_after_flow_ends: false
-      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
-      next:
-      - if: not slots.slot_dong_y_tra_no_dung_han
-        then:
-          - action: utter_ghi_nhan_thong_tin_tra_no_bad
-            next: END
-      - else: tra_no_dung_han_good_xac_nhan_lan_1
+      - else:
+          - action: utter_nhac_kh_tra_no_dung_han
   
-  #step_chao_hoi_va_nhac_no:
-  #  description: "Chào hỏi khách hàng"
-  #  always_include_in_prompt: true
-  #  nlu_trigger:
-  #  - intent: "intent_start"
-  #  steps:
-  #  - collect: slot_xac_dinh_khach_hang
-  #    utter: utter_xac_dinh_khach_hang
-  #    ask_before_filling: true
-  #    reset_after_flow_ends: false
-  #    next:
-  #    - if: not slots.slot_xac_dinh_khach_hang
-  #      then:
-  #        - action: utter_nham_so_xin_loi_vi_lam_phien
-  #          next: END
-  #
-  #step_nhac_kh_tra_no_dung_han:
-  #  description: "Nhắc khách hàng trả nợ đúng hạn"
-  #  always_include_in_prompt: true
-  #  nlu_trigger:
-  #  - intent: "intent_start"
-  #  steps:
-  #  - collect: slot_xac_dinh_khach_hang
-  #    utter: utter_xac_dinh_khach_hang
-  #    ask_before_filling: true
-  #    reset_after_flow_ends: false
-  #    next:
-  #    - if: not slots.slot_xac_dinh_khach_hang
-  #      then:
-  #        - action: utter_nham_so_xin_loi_vi_lam_phien
-  #          next: END
+  step_nhac_kh_tra_no_dung_han:
+    description: "Nhắc khách hàng trả nợ đúng hạn"
+    always_include_in_prompt: true
+    steps:
+    - action: utter_xac_dinh_khach_hang
