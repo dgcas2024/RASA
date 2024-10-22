@@ -23,7 +23,9 @@ flows:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then: 
           - link: step_ghi_nhan_thong_tin_tra_no_good
-      - else: END
+      - else:
+        - action: utter_xin_khach_hang_noi_lai
+          next: END
 
   step_nlu_trigger_handller___intent_good__xac_nhan_thanh_toan:
     description: "Control flow với intent xác nhận thanh toán"
@@ -44,7 +46,9 @@ flows:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
           - link: step_ghi_nhan_thong_tin_tra_no_good
-      - else: END
+      - else:
+        - action: utter_xin_khach_hang_noi_lai
+          next: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_chung:
     description: "Control flow với intent KHÔNG xác nhận chung chung"
@@ -68,7 +72,9 @@ flows:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then:
           - link: step_ghi_nhan_thong_tin_tra_no_bad
-      - else: END
+      - else:
+        - action: utter_xin_khach_hang_noi_lai
+          next: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_thanh_toan:
     description: "Control flow với intent KHÔNG xác nhận thanh toán"
@@ -89,7 +95,9 @@ flows:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then:
           - link: step_ghi_nhan_thong_tin_tra_no_bad
-      - else: END
+      - else:
+        - action: utter_xin_khach_hang_noi_lai
+          next: END
 
   step_chao_hoi_khach_hang:
     description: "Chào hỏi khách hàng"
