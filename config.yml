@@ -13,6 +13,8 @@ pipeline:
     lowercase: true
   - name: DIETClassifier
     epochs: 100
+    entity_threshold: 0.5
+    intent_threshold: 0.5
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
