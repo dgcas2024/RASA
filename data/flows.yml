@@ -2,7 +2,7 @@
 
 flows:
   step_nlu_trigger_handller___intent_good__xac_nhan_chung:
-    description: "Control flow"
+    description: "Control flow với intent xác nhận chung chung"
     always_include_in_prompt: false
     nlu_trigger:
     - intent: "intent_good__xac_nhan_chung"
@@ -24,7 +24,7 @@ flows:
       - else: END
 
   step_nlu_trigger_handller___intent_good__xac_nhan_thanh_toan:
-    description: "Control flow"
+    description: "Control flow với intent xác nhận thanh toán"
     always_include_in_prompt: false
     nlu_trigger:
     - intent: "intent_good__xac_nhan_thanh_toan"
@@ -43,7 +43,7 @@ flows:
       - else: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_chung:
-    description: "Control flow"
+    description: "Control flow với intent KHÔNG xác nhận chung chung"
     always_include_in_prompt: false
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_chung"
@@ -65,7 +65,7 @@ flows:
       - else: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_thanh_toan:
-    description: "Control flow"
+    description: "Control flow với intent KHÔNG xác nhận thanh toán"
     always_include_in_prompt: false
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_thanh_toan"
