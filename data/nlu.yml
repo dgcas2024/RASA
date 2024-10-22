@@ -110,6 +110,10 @@ nlu:
     - không, chị là [Vân](entity_receiver_name)
     - không, chị là [Trang](entity_receiver_name)
     - lộn rồi
+    - lộn số rồi
+    - nhầm số rồi
+    - không phải anh ơi
+    - nhầm rồi chị ơi
 
 - intent: intent_bad__xac_nhan_thanh_toan
   examples: |
