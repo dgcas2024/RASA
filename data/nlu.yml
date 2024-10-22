@@ -33,15 +33,16 @@ nlu:
     - chính xác, có gì không
     - ừ, sao đấy
     - ừ đúng rồi
-    - anh [Nam]{"entity": "entity_receiver_name"} đây
-    - anh [Hồng]{"entity": "entity_receiver_name"} đây
-    - anh [Lộc]{"entity": "entity_receiver_name"} đây
-    - chị [Nga]{"entity": "entity_receiver_name"} đây
-    - anh [Long]{"entity": "entity_receiver_name"} đây
-    - ở, anh [Nhân]{"entity": "entity_receiver_name"} đây
-    - anh [Hùng]{"entity": "entity_receiver_name"} đây
-    - chị [Hương]{"entity": "entity_receiver_name"} đây
-    - chị [Lan]{"entity": "entity_receiver_name"} đây
+    # - https://learning.rasa.com/archive/conversational-ai-with-rasa/entities/
+    - anh [Nam](entity_receiver_name) đây
+    - anh [Hồng](entity_receiver_name) đây
+    - anh [Lộc](entity_receiver_name) đây
+    - chị [Nga](entity_receiver_name) đây
+    - anh [Long](entity_receiver_name) đây
+    - ở, anh [Nhân](entity_receiver_name) đây
+    - anh [Hùng](entity_receiver_name) đây
+    - chị [Hương](entity_receiver_name) đây
+    - chị [Lan](entity_receiver_name) đây
 - intent: intent_xac_dinh_khach_hang_bad
   examples: |
     - nhầm máy rồi
