@@ -10,7 +10,7 @@ entities:
 
 slots:
   slot_receiver_name:
-    type: any
+    type: text
     mappings:
     - type: from_entity
       entity: entity_receiver_name
