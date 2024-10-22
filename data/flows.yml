@@ -214,9 +214,8 @@ flows:
       - slot_latest_run_step: "step_ghi_nhan_thong_tin_tra_no_bad"
   
   step_force_end:
-    description: "Chào hỏi khách hàng"
+    description: "Flow force end"
     always_include_in_prompt: true
-    if: slots.slot_latest_run_step = ""
     nlu_trigger:
     - intent: "intent_force_end"
     steps:
@@ -226,3 +225,15 @@ flows:
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "step_force_end"
+  
+  step_nlu_fallback:
+    description: "Flow fallback"
+    always_include_in_prompt: true
+    nlu_trigger:
+    - intent: "nlu_fallback"
+    steps:
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nlu_fallback"
