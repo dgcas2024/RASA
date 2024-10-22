@@ -7,7 +7,6 @@ entities:
 slots:
   slot_latest_run_step:
     type: text
-    auto_fill: false
     initial_value: ""
 
   slot_receiver_name:
