@@ -18,13 +18,15 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-  #- name: FallbackClassifier
-  #  threshold: 0.5
-  #  # ambiguity_threshold: 0.5
+  - name: FallbackClassifier
+    threshold: 0.5
+    # ambiguity_threshold: 0.5
   - name: NLUCommandAdapter
 
 policies:
-  - name: RulePolicy 
+  - name: RulePolicy
+    core_fallback_action_name: "action_listen"
+    enable_fallback_prediction: false
   - name: MemoizationPolicy
     max_history: 10
   - name: TEDPolicy
