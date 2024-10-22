@@ -10,13 +10,17 @@ flows:
     - noop: true
       next:
       - if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
-        then: step_nhac_kh_tra_no_dung_han
+        then: 
+          - link: step_nhac_kh_tra_no_dung_han
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
+        then: 
+          - link: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
-        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
+        then: 
+          - link: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-        then: step_ghi_nhan_thong_tin_tra_no_good
+        then: 
+          - link: step_ghi_nhan_thong_tin_tra_no_good
       - else: END
 
   step_nlu_trigger_handller___intent_good__xac_nhan_thanh_toan:
@@ -28,11 +32,14 @@ flows:
     - noop: true
       next:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
+        then: 
+          - link: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
-        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
+        then:
+          - link: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-        then: step_ghi_nhan_thong_tin_tra_no_good
+        then:
+          - link: step_ghi_nhan_thong_tin_tra_no_good
       - else: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_chung:
@@ -44,13 +51,17 @@ flows:
     - noop: true
       next:
       - if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
-        then: step_nham_so_xin_loi_khach_hang
+        then:
+          - link: step_nham_so_xin_loi_khach_hang
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
+        then:
+          - link: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
-        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
+        then:
+          - link: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-        then: step_ghi_nhan_thong_tin_tra_no_bad
+        then:
+          - link: step_ghi_nhan_thong_tin_tra_no_bad
       - else: END
   
   step_nlu_trigger_handller___intent_bad__xac_nhan_thanh_toan:
@@ -62,11 +73,14 @@ flows:
     - noop: true
       next:
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
+        then:
+          - link: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
-        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
+        then:
+          - link: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
       - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-        then: step_ghi_nhan_thong_tin_tra_no_bad
+        then:
+          - link: step_ghi_nhan_thong_tin_tra_no_bad
       - else: END
 
   step_chao_hoi_khach_hang:
