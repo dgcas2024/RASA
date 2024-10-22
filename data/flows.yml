@@ -186,7 +186,7 @@ flows:
       - slot_latest_run_step: "step_ghi_nhan_thong_tin_tra_no_good"
   
   step_ghi_nhan_thong_tin_tra_no_bad:
-    description: "Ghi nhận thông tin KH xác nhận trả nợ đúng hạn"
+    description: "Ghi nhận thông tin KH xác nhận KHÔNG trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
     steps:
