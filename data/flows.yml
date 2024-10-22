@@ -93,4 +93,5 @@ flows:
     always_include_in_prompt: true
     steps:
     - action: utter_xac_dinh_khach_hang
-    - next: END
+    - set_slots:
+      - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han"
