@@ -63,7 +63,7 @@ slots:
     mappings:
     - type: from_entity
       entity: entity_xin_gia_han_ngay_tra_no
-    initial_value: false
+    initial_value: ""
 
 
 intents:

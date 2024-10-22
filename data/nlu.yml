@@ -14,6 +14,8 @@ nlu:
   examples: |
     - ờ đúng
     - ừ đúng
+    - đúng rồi
+    - ừ em
     - đúng rồi ạ
     - vâng, đúng rồi
     - dạ, đúng rồi
@@ -53,6 +55,7 @@ nlu:
   examples: |
     - ok, anh sẽ trả
     - được rồi
+    - được rồi, nói nhiều quá
     - ok chị sẽ trả
     - yên tâm nhé
     - vâng ạ
@@ -66,7 +69,7 @@ nlu:
     - anh sẽ chuẩn bị
     - ok để anh chuẩn bị
     - chị sẽ thanh toán
-    - ờ, đúng rồi
+    - ờ, nói nhiều quá
     - ờ, tôi sẽ trả
     - ờ, chị sẽ trả
 - intent: intent_phan_hoi_tra_no_dung_han_bad
