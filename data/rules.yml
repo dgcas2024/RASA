@@ -1,7 +1,37 @@
 ﻿#version: "3.1"
 
-#rules:
-#- rule: force_end
-#  steps:
-#  - intent: intent_force_end
-#  - action: utter_force_end
+rules:
+- rule: intent_start
+  steps:
+  - intent: intent_start
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_good__xac_nhan_danh_tinh
+  steps:
+  - intent: intent_good__xac_nhan_danh_tinh
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_good__xac_nhan_thanh_toan
+  steps:
+  - intent: intent_good__xac_nhan_thanh_toan
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_good__xac_nhan_chung
+  steps:
+  - intent: intent_good__xac_nhan_chung
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_bad__xac_nhan_danh_tinh
+  steps:
+  - intent: intent_bad__xac_nhan_danh_tinh
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_bad__xac_nhan_thanh_toan
+  steps:
+  - intent: intent_bad__xac_nhan_thanh_toan
+  - action: utter_xin_khach_hang_noi_lai
+  
+- rule: intent_bad__xac_nhan_chung
+  steps:
+  - intent: intent_bad__xac_nhan_chung
+  - action: utter_xin_khach_hang_noi_lai
