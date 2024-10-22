@@ -7,39 +7,32 @@ entities:
 slots:
   slot_latest_run_step:
     type: text
-    reset_after_flow_ends: false
     initial_value: ""
 
   slot_receiver_name:
     type: text
-    reset_after_flow_ends: false
     mappings:
     - type: from_entity
       entity: entity_receiver_name
 
   slot_customer_title:
     type: text
-    reset_after_flow_ends: false
     initial_value: anh
 
   slot_customer_name:
     type: text
-    reset_after_flow_ends: false
     initial_value: Cù Trọng Xoay
 
   slot_customer_debt_due_date:
     type: text
-    reset_after_flow_ends: false
     initial_value: 20/10/2024
 
   slot_customer_debt_amount:
     type: text
-    reset_after_flow_ends: false
     initial_value: "20.000.000"
 
   slot_xac_nhan_khach_hang:
     type: bool
-    reset_after_flow_ends: false
     mappings:
     - type: from_intent
       intent: intent_good__xac_nhan_danh_tinh
@@ -56,7 +49,6 @@ slots:
     initial_value: false
   slot_dong_y_tra_no_dung_han:
     type: bool
-    reset_after_flow_ends: false
     mappings:
     - type: from_intent
       intent: intent_phan_hoi_tra_no_dung_han_good
