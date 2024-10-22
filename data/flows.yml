@@ -1,6 +1,74 @@
 ﻿version: "3.1"
 
 flows:
+  step_nlu_trigger_handller___intent_good__xac_nhan_chung:
+    description: "Control flow"
+    always_include_in_prompt: false
+    nlu_trigger:
+    - intent: "intent_good__xac_nhan_chung"
+    steps:
+    - noop: true
+      next:
+      - if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
+        then: step_nhac_kh_tra_no_dung_han
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
+        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+        then: step_ghi_nhan_thong_tin_tra_no_good
+      - else: END
+
+  step_nlu_trigger_handller___intent_good__xac_nhan_thanh_toan:
+    description: "Control flow"
+    always_include_in_prompt: false
+    nlu_trigger:
+    - intent: "intent_good__xac_nhan_thanh_toan"
+    steps:
+    - noop: true
+      next:
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
+        then: step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+        then: step_ghi_nhan_thong_tin_tra_no_good
+      - else: END
+  
+  step_nlu_trigger_handller___intent_bad__xac_nhan_chung:
+    description: "Control flow"
+    always_include_in_prompt: false
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_chung"
+    steps:
+    - noop: true
+      next:
+      - if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
+        then: step_nham_so_xin_loi_khach_hang
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
+        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+        then: step_ghi_nhan_thong_tin_tra_no_bad
+      - else: END
+  
+  step_nlu_trigger_handller___intent_bad__xac_nhan_thanh_toan:
+    description: "Control flow"
+    always_include_in_prompt: false
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_thanh_toan"
+    steps:
+    - noop: true
+      next:
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
+        then: step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2
+      - if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+        then: step_ghi_nhan_thong_tin_tra_no_bad
+      - else: END
+
   step_chao_hoi_khach_hang:
     description: "Chào hỏi khách hàng"
     always_include_in_prompt: true
@@ -21,7 +89,6 @@ flows:
     if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
     nlu_trigger:
     - intent: "intent_good__xac_nhan_danh_tinh"
-    - intent: "intent_good__xac_nhan_chung"
     steps:
     - action: utter_nhac_kh_tra_no_dung_han
     - collect: slot_latest_run_step
@@ -34,9 +101,6 @@ flows:
     description: "Xác nhận lần 1 khi khách hàng xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-    nlu_trigger:
-    - intent: "intent_good__xac_nhan_thanh_toan"
-    - intent: "intent_good__xac_nhan_chung"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
     - collect: slot_latest_run_step
@@ -49,9 +113,6 @@ flows:
     description: "Xác nhận lần 2 khi khách hàng xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han"
-    nlu_trigger:
-    - intent: "intent_good__xac_nhan_thanh_toan"
-    - intent: "intent_good__xac_nhan_chung"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
     - collect: slot_latest_run_step
@@ -64,9 +125,6 @@ flows:
     description: "Hỏi lý do lần 1 khi khách hàng KHÔNG xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-    nlu_trigger:
-    - intent: "intent_bad__xac_nhan_thanh_toan"
-    - intent: "intent_bad__xac_nhan_chung"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
     - collect: slot_latest_run_step
@@ -79,9 +137,6 @@ flows:
     description: "Hỏi lý do lần 2 khi khách hàng KHÔNG xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
-    nlu_trigger:
-    - intent: "intent_bad__xac_nhan_thanh_toan"
-    - intent: "intent_bad__xac_nhan_chung"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
     - collect: slot_latest_run_step
@@ -96,7 +151,6 @@ flows:
     if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_danh_tinh"
-    - intent: "intent_bad__xac_nhan_chung"
     steps:
     - action: utter_nham_so_xin_loi_vi_lam_phien
     - collect: slot_latest_run_step
@@ -109,9 +163,6 @@ flows:
     description: "Ghi nhận thông tin KH xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
-    nlu_trigger:
-    - intent: "intent_good__xac_nhan_thanh_toan"
-    - intent: "intent_good__xac_nhan_chung"
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_good
     - collect: slot_latest_run_step
@@ -124,9 +175,6 @@ flows:
     description: "Ghi nhận thông tin KH xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
     if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
-    nlu_trigger:
-    - intent: "intent_bad__xac_nhan_thanh_toan"
-    - intent: "intent_bad__xac_nhan_chung"
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_bad
     - collect: slot_latest_run_step
