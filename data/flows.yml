@@ -1,72 +1,6 @@
 ﻿version: "3.1"
 
 flows:
-#  main_flow:
-#    description: "Nhắc nợ khách hàng"
-#    always_include_in_prompt: true
-#    #nlu_trigger:
-#    #- intent: "intent_start"
-#    steps:
-#    - collect: slot_xac_dinh_khach_hang
-#      utter: utter_xac_dinh_khach_hang
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      next:
-#      - if: not slots.slot_xac_dinh_khach_hang
-#        then:
-#          - action: utter_nham_so_xin_loi_vi_lam_phien
-#            next: END
-#      - else: step_nhac_kh_tra_no_dung_han
-#    - id: step_nhac_kh_tra_no_dung_han
-#      collect: slot_dong_y_tra_no_dung_han
-#      utter: utter_nhac_kh_tra_no_dung_han
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      next:
-#      - if: slots.slot_dong_y_tra_no_dung_han
-#        then: tra_no_dung_han_good_xac_nhan_lan_1
-#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-#    - id: tra_no_dung_han_good_xac_nhan_lan_1
-#      collect: slot_dong_y_tra_no_dung_han
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
-#      next:
-#      - if: slots.slot_dong_y_tra_no_dung_han
-#        then: tra_no_dung_han_good_xac_nhan_lan_2
-#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-#    - id: tra_no_dung_han_good_xac_nhan_lan_2
-#      collect: slot_dong_y_tra_no_dung_han
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      utter: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
-#      next:
-#      - if: slots.slot_dong_y_tra_no_dung_han
-#        then:
-#          - action: utter_ghi_nhan_thong_tin_tra_no_good
-#            next: END
-#      - else: tra_no_dung_han_bad_xac_nhan_lan_1
-#    - id: tra_no_dung_han_bad_xac_nhan_lan_1
-#      collect: slot_dong_y_tra_no_dung_han
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
-#      next:
-#      - if: not slots.slot_dong_y_tra_no_dung_han
-#        then: tra_no_dung_han_bad_xac_nhan_lan_2
-#      - else: tra_no_dung_han_good_xac_nhan_lan_1
-#    - id: tra_no_dung_han_bad_xac_nhan_lan_2
-#      collect: slot_dong_y_tra_no_dung_han
-#      ask_before_filling: true
-#      reset_after_flow_ends: false
-#      utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
-#      next:
-#      - if: not slots.slot_dong_y_tra_no_dung_han
-#        then:
-#          - action: utter_ghi_nhan_thong_tin_tra_no_bad
-#            next: END
-#      - else: tra_no_dung_han_good_xac_nhan_lan_1
-  
   step_chao_hoi_khach_hang:
     description: "Chào hỏi khách hàng"
     always_include_in_prompt: true
@@ -80,18 +14,6 @@ flows:
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "step_chao_hoi_khach_hang"
-  
-  step_nham_so_xin_loi_khach_hang:
-    description: "Liên hệ nhầm người, xin lỗi khách hàng và chào tạm biệt"
-    always_include_in_prompt: true
-    if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
-    nlu_trigger:
-    - intent: "intent_bad__xac_nhan_danh_tinh"
-    - intent: "intent_bad__xac_nhan_chung"
-    steps:
-    - action: utter_nham_so_xin_loi_vi_lam_phien
-    - set_slots:
-      - slot_latest_run_step: "step_nham_so_xin_loi_khach_hang"
 
   step_nhac_kh_tra_no_dung_han:
     description: "Nhắc khách hàng trả nợ đúng hạn"
@@ -102,5 +24,113 @@ flows:
     - intent: "intent_good__xac_nhan_chung"
     steps:
     - action: utter_nhac_kh_tra_no_dung_han
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han"
+  
+  step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1:
+    description: "Xác nhận lần 1 khi khách hàng xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+    nlu_trigger:
+    - intent: "intent_good__xac_nhan_thanh_toan"
+    - intent: "intent_good__xac_nhan_chung"
+    steps:
+    - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
+  
+  step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2:
+    description: "Xác nhận lần 2 khi khách hàng xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han"
+    nlu_trigger:
+    - intent: "intent_good__xac_nhan_thanh_toan"
+    - intent: "intent_good__xac_nhan_chung"
+    steps:
+    - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+  
+  step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1:
+    description: "Hỏi lý do lần 1 khi khách hàng KHÔNG xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_thanh_toan"
+    - intent: "intent_bad__xac_nhan_chung"
+    steps:
+    - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
+
+  step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2:
+    description: "Hỏi lý do lần 2 khi khách hàng KHÔNG xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_thanh_toan"
+    - intent: "intent_bad__xac_nhan_chung"
+    steps:
+    - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+
+  step_nham_so_xin_loi_khach_hang:
+    description: "Liên hệ nhầm người, xin lỗi khách hàng và chào tạm biệt"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_chao_hoi_khach_hang"
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_danh_tinh"
+    - intent: "intent_bad__xac_nhan_chung"
+    steps:
+    - action: utter_nham_so_xin_loi_vi_lam_phien
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_nham_so_xin_loi_khach_hang"
+  
+  step_ghi_nhan_thong_tin_tra_no_good:
+    description: "Ghi nhận thông tin KH xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+    nlu_trigger:
+    - intent: "intent_good__xac_nhan_thanh_toan"
+    - intent: "intent_good__xac_nhan_chung"
+    steps:
+    - action: utter_ghi_nhan_thong_tin_tra_no_good
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_ghi_nhan_thong_tin_tra_no_good"
+  
+  step_ghi_nhan_thong_tin_tra_no_bad:
+    description: "Ghi nhận thông tin KH xác nhận trả nợ đúng hạn"
+    always_include_in_prompt: true
+    if: slots.slot_latest_run_step = "step_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+    nlu_trigger:
+    - intent: "intent_bad__xac_nhan_thanh_toan"
+    - intent: "intent_bad__xac_nhan_chung"
+    steps:
+    - action: utter_ghi_nhan_thong_tin_tra_no_bad
+    - collect: slot_latest_run_step
+      ask_before_filling: false
+      reset_after_flow_ends: false
+    - set_slots:
+      - slot_latest_run_step: "step_ghi_nhan_thong_tin_tra_no_bad"
