@@ -83,11 +83,14 @@ flows:
       - if: not slots.slot_xac_nhan_khach_hang
         then:
           - action: utter_nham_so_xin_loi_vi_lam_phien
+          - next: END
       - else:
           - action: utter_nhac_kh_tra_no_dung_han
+          - next: END
   
   step_nhac_kh_tra_no_dung_han:
     description: "Nhắc khách hàng trả nợ đúng hạn"
     always_include_in_prompt: true
     steps:
     - action: utter_xac_dinh_khach_hang
+    - next: END
