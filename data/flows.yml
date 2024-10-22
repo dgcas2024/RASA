@@ -89,6 +89,7 @@ flows:
     - action: utter_nham_so_xin_loi_vi_lam_phien
     - set_slots:
       - slot_latest_run_step: "step_nham_so_xin_loi_khach_hang"
+        reset_after_flow_ends: false
 
   step_nhac_kh_tra_no_dung_han:
     description: "Nhắc khách hàng trả nợ đúng hạn"
@@ -101,3 +102,4 @@ flows:
     - action: utter_nhac_kh_tra_no_dung_han
     - set_slots:
       - slot_latest_run_step: "step_nhac_kh_tra_no_dung_han"
+        reset_after_flow_ends: false
