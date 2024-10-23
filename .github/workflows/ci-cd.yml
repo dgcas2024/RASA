@@ -56,9 +56,6 @@ jobs:
         run: |
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
-            -e FACEBOOK_VERIFY=${FACEBOOK_VERIFY} \
-            -e FACEBOOK_SECRET=${FACEBOOK_SECRET} \
-            -e FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN} \
             -u $(id -u) \
             --name github_runner_dgcas2024_rasa_inspect_6006 \
             -p 6006:6006 \
@@ -66,29 +63,6 @@ jobs:
             inspect --model /app/models --endpoints /app/endpoints.yml \
             --port 6006
             #--cors "*"
-        env:
-          FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
-          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
-
-      - name: Run model
-        run: |
-          sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
-            -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
-            -e FACEBOOK_VERIFY=${FACEBOOK_VERIFY} \
-            -e FACEBOOK_SECRET=${FACEBOOK_SECRET} \
-            -e FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN} \
-            -u $(id -u) \
-            --name github_runner_dgcas2024_rasa_6005 \
-            -p 6005:6005 \
-            ${{ vars.RASA_IMAGE }} \
-            run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api \
-            --port 6005
-            #--cors "*"
-        env:
-          FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
-          FACEBOOK_SECRET: ${{ secrets.FACEBOOK_SECRET }}
-          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
 
       - name: Validate URL
         run: |
@@ -117,16 +91,3 @@ jobs:
             fi
           done
           echo "Inspect is ready."
-
-          echo "Waiting for server to be ready..."
-          timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:6005/status; do
-            echo "Waiting for server to be ready...$timeout"
-            sleep 1
-            timeout=$((timeout-1))
-            if [ "$timeout" -le 0 ]; then
-              echo "Timeout when start server."
-              exit 1
-            fi
-          done
-          echo "Server is ready."
