@@ -224,7 +224,7 @@ flows:
       ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
-      - slot_latest_run_step: "step_force_end"
+      - slot_latest_run_step: ""
   
   step_nlu_fallback:
     description: "Flow fallback"
