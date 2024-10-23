@@ -3,7 +3,7 @@ name: Rasa Pro CI-CD Pipeline
 on:
   push:
     branches:
-      - master
+      - 600x_pop61
 
 jobs:
   train_and_deploy:
@@ -45,11 +45,11 @@ jobs:
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             -u $(id -u) \
-            --name github_runner_dgcas2024_rasa_action_5007 \
-            -p 5007:5007 \
+            --name github_runner_dgcas2024_rasa_action_6007 \
+            -p 6007:6007 \
             ${{ vars.RASA_IMAGE }} \
             run actions \
-            --port 5007
+            --port 6007
             #--cors "*"
 
       - name: Run inspect
@@ -60,11 +60,11 @@ jobs:
             -e FACEBOOK_SECRET=${FACEBOOK_SECRET} \
             -e FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN} \
             -u $(id -u) \
-            --name github_runner_dgcas2024_rasa_inspect_5006 \
-            -p 5006:5006 \
+            --name github_runner_dgcas2024_rasa_inspect_6006 \
+            -p 6006:6006 \
             ${{ vars.RASA_IMAGE }} \
             inspect --model /app/models --endpoints /app/endpoints.yml \
-            --port 5006
+            --port 6006
             #--cors "*"
         env:
           FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
@@ -79,11 +79,11 @@ jobs:
             -e FACEBOOK_SECRET=${FACEBOOK_SECRET} \
             -e FACEBOOK_PAGE_ACCESS_TOKEN=${FACEBOOK_PAGE_ACCESS_TOKEN} \
             -u $(id -u) \
-            --name github_runner_dgcas2024_rasa_5005 \
-            -p 5005:5005 \
+            --name github_runner_dgcas2024_rasa_6005 \
+            -p 6005:6005 \
             ${{ vars.RASA_IMAGE }} \
             run --model /app/models --endpoints /app/endpoints.yml --credentials /app/credentials.yml --enable-api \
-            --port 5005
+            --port 6005
             #--cors "*"
         env:
           FACEBOOK_VERIFY: ${{ secrets.FACEBOOK_VERIFY }}
@@ -94,7 +94,7 @@ jobs:
         run: |
           echo "Waiting for actions to be ready..."
           timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5007/health; do
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:6007/health; do
             echo "Waiting for actions to be ready...$timeout"
             sleep 1
             timeout=$((timeout-1))
@@ -107,7 +107,7 @@ jobs:
 
           echo "Waiting for inspect to be ready..."
           timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006/status; do
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:6006/status; do
             echo "Waiting for inspect to be ready...$timeout"
             sleep 1
             timeout=$((timeout-1))
@@ -120,7 +120,7 @@ jobs:
 
           echo "Waiting for server to be ready..."
           timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5005/status; do
+          while ! curl --output /dev/null --silent --fail http://127.0.0.1:6005/status; do
             echo "Waiting for server to be ready...$timeout"
             sleep 1
             timeout=$((timeout-1))
