@@ -170,3 +170,13 @@ nlu:
     - biến đi
     - fdsgs
     - sjaff
+
+- intent: intent_faq1
+  examples: |
+    - hạn chót trả nợ của anh là ngày bao nhiêu vậy em
+    - khi nào thì đến hạn trả nợ vậy em
+    - anh còn thiếu bao nhiêu vậy em
+    - chị còn nợ bao nhiêu vậy em
+    - hạn chót là ngày nào vậy em
+    - ngày nào là hạn chót vậy em
+    - bao nhiêu tiền vậy em

@@ -74,6 +74,7 @@ intents:
 - intent_bad__xac_nhan_thanh_toan
 - intent_bad__xac_nhan_chung
 - intent_force_end
+- intent_faq1
 
 responses:
   utter_xac_nhan_khach_hang:
@@ -102,6 +103,8 @@ responses:
   - text: "Tạm biệt quý khách!"
   utter_can_do_something_else:
     - text: ""
+  utter_faq1:
+    - text: "Khoản nợ của {{slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount}, và hạn chót thanh toán là ngày {slot_customer_debt_due_date} ạ"
 
 session_config:
   session_expiration_time: 60
