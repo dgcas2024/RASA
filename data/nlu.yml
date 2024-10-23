@@ -117,6 +117,11 @@ nlu:
 
 - intent: intent_bad__xac_nhan_thanh_toan
   examples: |
+    - anh bó tay
+    - chị bó tay
+    - hết cách rồi
+    - chịu luôn rồi đấy
+    - vô phương cứu chữa rồi
     - chưa có tiền
     - không trả 
     - hết tiền rồi
