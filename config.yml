@@ -5,27 +5,27 @@ pipeline:
     type: ollama
     model: llama3.1:8b
     api_base: http://10.120.80.6:11434
-  #- name: WhitespaceTokenizer
-  #- name: RegexFeaturizer
-  #- name: LexicalSyntacticFeaturizer
-  #- name: CountVectorsFeaturizer
-  #  analyzer: "char_wb"
-  #  min_ngram: 1
-  #  max_ngram: 4
-  #  lowercase: true
-  #- name: CountVectorsFeaturizer
-  #  lowercase: true
-  #- name: DIETClassifier
-  #  epochs: 100
-  #  entity_threshold: 0.7
-  #  intent_threshold: 0.7
-  #- name: EntitySynonymMapper
-  #- name: ResponseSelector
-  #  epochs: 100
-  #- name: FallbackClassifier
-  #  threshold: 0.6
-  #  # ambiguity_threshold: 0.5
-  #- name: NLUCommandAdapter
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+    lowercase: true
+  - name: CountVectorsFeaturizer
+    lowercase: true
+  - name: DIETClassifier
+    epochs: 100
+    entity_threshold: 0.7
+    intent_threshold: 0.7
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+  - name: FallbackClassifier
+    threshold: 0.6
+    # ambiguity_threshold: 0.5
+  - name: NLUCommandAdapter
 
 policies:
   - name: RulePolicy
