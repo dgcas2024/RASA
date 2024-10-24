@@ -38,8 +38,6 @@ slots:
     type: text
     influence_conversation: true
     initial_value: ""
-    mappings:
-      - type: from_text
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
