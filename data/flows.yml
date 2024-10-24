@@ -138,7 +138,7 @@ flows:
   flow_kh_xin_gia_han_ngay_tra_no:
     description: "Khách hàng xin gia hạn ngày trả nợ"
     always_include_in_prompt: true
-    if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
+    if: slots.slot_latest_run_step != "flow_chao_hoi_khach_hang" and slots.slot_latest_run_step != ""
     nlu_trigger:
     - intent: "intent_kh_xin_gia_han_ngay_tra_no"
     steps:
