@@ -7,7 +7,7 @@ flows:
     nlu_trigger:
     - intent: "intent_good__xac_nhan_chung"
     steps:
-    - nope: true
+    - noop: true
       next:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then: 
@@ -31,7 +31,7 @@ flows:
     nlu_trigger:
     - intent: "intent_good__xac_nhan_thanh_toan"
     steps:
-    - nope: true
+    - noop: true
       next:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then: 
@@ -52,7 +52,7 @@ flows:
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_chung"
     steps:
-    - nope: true
+    - noop: true
       next:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then:
@@ -76,7 +76,7 @@ flows:
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_thanh_toan"
     steps:
-    - nope: true
+    - noop: true
       next:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
