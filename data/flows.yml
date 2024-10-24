@@ -7,9 +7,7 @@ flows:
     nlu_trigger:
     - intent: "intent_good__xac_nhan_chung"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
+    - nope: true
       next:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then: 
@@ -33,9 +31,7 @@ flows:
     nlu_trigger:
     - intent: "intent_good__xac_nhan_thanh_toan"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
+    - nope: true
       next:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then: 
@@ -56,9 +52,7 @@ flows:
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_chung"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
+    - nope: true
       next:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then:
@@ -82,9 +76,7 @@ flows:
     nlu_trigger:
     - intent: "intent_bad__xac_nhan_thanh_toan"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
+    - nope: true
       next:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
@@ -107,9 +99,6 @@ flows:
     - intent: "intent_start"
     steps:
     - action: utter_xac_nhan_khach_hang
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_chao_hoi_khach_hang"
 
@@ -121,9 +110,6 @@ flows:
     - intent: "intent_good__xac_nhan_danh_tinh"
     steps:
     - action: utter_nhac_kh_tra_no_dung_han
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han"
   
@@ -133,9 +119,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
   
@@ -145,9 +128,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
   
@@ -157,9 +137,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
 
@@ -169,9 +146,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
 
@@ -183,9 +157,6 @@ flows:
     - intent: "intent_bad__xac_nhan_danh_tinh"
     steps:
     - action: utter_nham_so_xin_loi_vi_lam_phien
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nham_so_xin_loi_khach_hang"
   
@@ -195,9 +166,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_good
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_ghi_nhan_thong_tin_tra_no_good"
   
@@ -207,9 +175,6 @@ flows:
     if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_bad
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_ghi_nhan_thong_tin_tra_no_bad"
   
@@ -220,9 +185,6 @@ flows:
     - intent: "intent_force_end"
     steps:
     - action: utter_force_end
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: ""
   
@@ -232,9 +194,6 @@ flows:
     nlu_trigger:
     - intent: "nlu_fallback"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - action: utter_xin_khach_hang_noi_lai
     #- set_slots:
     #  - slot_latest_run_step: "flow_nlu_fallback"
@@ -245,7 +204,4 @@ flows:
     nlu_trigger:
     - intent: "intent_faq1"
     steps:
-    - collect: slot_latest_run_step
-      ask_before_filling: false
-      reset_after_flow_ends: false
     - action: utter_faq1

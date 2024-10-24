@@ -8,9 +8,12 @@ slots:
   slot_latest_run_step:
     type: text
     initial_value: ""
+    influence_conversation: true
 
   slot_receiver_name:
     type: text
+    initial_value: ""
+    influence_conversation: true
     mappings:
     - type: from_entity
       entity: entity_receiver_name
@@ -31,38 +34,18 @@ slots:
     type: text
     initial_value: "20.000.000"
 
-  slot_xac_nhan_khach_hang:
-    type: bool
-    mappings:
-    - type: from_intent
-      intent: intent_good__xac_nhan_danh_tinh
-      value: true
-    - type: from_intent
-      intent: intent_good__xac_nhan_chung
-      value: true
-    - type: from_intent
-      intent: intent_bad__xac_nhan_danh_tinh
-      value: false
-    - type: from_intent
-      intent: intent_bad__xac_nhan_chung
-      value: false
-    initial_value: false
-  slot_dong_y_tra_no_dung_han:
-    type: bool
-    mappings:
-    - type: from_intent
-      intent: intent_phan_hoi_tra_no_dung_han_good
-      value: true
-    - type: from_intent
-      intent: intent_phan_hoi_tra_no_dung_han_bad
-      value: false
-    initial_value: false
+  slot_ly_do_khach_hang_khong_tra_no:
+    type: text
+    influence_conversation: true
+    initial_value: ""
+
   slot_xin_gia_han_ngay_tra_no:
     type: text
+    influence_conversation: true
+    initial_value: ""
     mappings:
     - type: from_entity
       entity: entity_xin_gia_han_ngay_tra_no
-    initial_value: ""
 
 
 intents:
