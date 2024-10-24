@@ -14,7 +14,7 @@ flows:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then: 
           - link: flow_nhac_kh_tra_no_dung_han
-      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then: 
           - link: flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
@@ -37,7 +37,7 @@ flows:
       ask_before_filling: false
       reset_after_flow_ends: false
       next:
-      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
         then: 
           - link: flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
@@ -63,7 +63,7 @@ flows:
       - if: slots.slot_latest_run_step = "flow_chao_hoi_khach_hang"
         then:
           - link: flow_nham_so_xin_loi_khach_hang
-      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
           - link: flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
@@ -86,7 +86,7 @@ flows:
       ask_before_filling: false
       reset_after_flow_ends: false
       next:
-      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+      - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
           - link: flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
@@ -130,7 +130,7 @@ flows:
   flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1:
     description: "Xác nhận lần 1 khi khách hàng xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
-    if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
+    if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
     - collect: slot_latest_run_step
@@ -154,7 +154,7 @@ flows:
   flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1:
     description: "Hỏi lý do lần 1 khi khách hàng KHÔNG xác nhận trả nợ đúng hạn"
     always_include_in_prompt: true
-    if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
+    if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
     - collect: slot_latest_run_step
