@@ -32,6 +32,9 @@ nlu:
     - vâng, tôi đây
     - chính xác, có gì không
     - ừ, sao đấy
+    - tôi là người mà bạn đang tìm đây
+    - anh là người mà em đang tìm đây
+    - chính anh đây
     # - https://learning.rasa.com/archive/conversational-ai-with-rasa/entities/
     - anh [Nam](entity_receiver_name) đây
     - anh [Hồng](entity_receiver_name) đây
@@ -189,6 +192,9 @@ nlu:
     - ngày [12/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả nhé
     - đến [30/10/2025](entity_xin_gia_han_ngay_tra_no) chị thanh toán được không
     - chị xin thanh toán chậm vào ngày [12/12/2023](entity_xin_gia_han_ngay_tra_no) nhé
+    - ngày [25](entity_xin_gia_han_ngay_tra_no) anh trả
+    - [qua tháng](entity_xin_gia_han_ngay_tra_no) anh trả được không
+    - [cuối tuần](entity_xin_gia_han_ngay_tra_no) chị trả được không
 
 - intent: intent_force_end
   examples: |
@@ -207,3 +213,6 @@ nlu:
     - hạn chót là ngày nào vậy em
     - ngày nào là hạn chót vậy em
     - bao nhiêu tiền vậy em
+    - em nhắc lại giúp anh khoản nợ với
+    - khoản nợ của anh là như nào em nhỉ
+    - khi nào thì phải trả vậy em

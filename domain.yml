@@ -38,6 +38,9 @@ slots:
     type: text
     influence_conversation: true
     initial_value: ""
+    mappings:
+    - type: from_text
+      intent: intent_bad__xac_nhan_thanh_toan
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
@@ -83,6 +86,8 @@ responses:
   - text: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
   utter_xin_khach_hang_noi_lai:
   - text: "Dạ em xin lỗi, {slot_customer_title} có thể vui lòng nhắc lại ý của {slot_customer_title} không ạ?"
+  utter_tu_choi_han_ngay_tra_no:
+  - text: "Dạ em xin lỗi, em không thể hỗ trợ vấn đề này, anh vui lòng trả nợ đúng hạn ạ theo hợp đồng đã cam kết ạ"
   utter_force_end:
   - text: "Tạm biệt quý khách!"
   utter_can_do_something_else:
