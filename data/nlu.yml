@@ -195,6 +195,8 @@ nlu:
     - ngày [25](entity_xin_gia_han_ngay_tra_no) anh trả
     - [qua tháng](entity_xin_gia_han_ngay_tra_no) anh trả được không
     - [cuối tuần](entity_xin_gia_han_ngay_tra_no) chị trả được không
+    - [tuần sau](entity_xin_gia_han_ngay_tra_no) thanh toán được không
+    - [tháng sau](entity_xin_gia_han_ngay_tra_no) thanh toán nha em
 
 - intent: intent_force_end
   examples: |
