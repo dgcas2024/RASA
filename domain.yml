@@ -40,6 +40,9 @@ slots:
     initial_value: ""
     mappings:
       - type: from_text
+        conditions:
+          - slot_was_set:
+            - slot_ly_do_khach_hang_khong_tra_no: "____"
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
