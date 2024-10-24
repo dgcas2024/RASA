@@ -71,4 +71,7 @@ class SubmitConversation(Action):
             "INSERT INTO conversation_submitted (data) VALUES (%s)",
             (json_string,)
         )
+        conn.commit()
+        cursor.close()
+        conn.close()
         return []
