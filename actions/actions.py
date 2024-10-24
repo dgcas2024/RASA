@@ -38,5 +38,6 @@ class ActionSetUserMessage(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        print("action_set_slot_ly_do_khach_hang_khong_tra_no...")
         last_message = tracker.latest_message.get('text')
         return [SlotSet("slot_ly_do_khach_hang_khong_tra_no", last_message)]
