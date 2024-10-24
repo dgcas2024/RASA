@@ -68,6 +68,6 @@ class SubmitConversation(Action):
         cursor = conn.cursor()
         cursor.execute(
             "INSERT INTO conversation_submitted (data) VALUES (%s)",
-            (json_string)
+            (json_string,)
         )
         return []
