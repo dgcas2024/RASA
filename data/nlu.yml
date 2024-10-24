@@ -75,7 +75,9 @@ nlu:
     - ở chị thanh toán
 
 - intent: intent_good__xac_nhan_chung
-  examples: |
+  examples: |  
+    - chốt nhé
+    - ok chốt vậy nhé
     - ừ đúng rồi
     - anh xác nhận
     - chị xác nhận
@@ -118,6 +120,9 @@ nlu:
 - intent: intent_bad__xac_nhan_thanh_toan
   examples: |
     - anh bó tay
+    - không mượn được
+    - không cho mượn
+    - mượn rồi mà họ không cho
     - chị bó tay
     - hết cách rồi
     - chịu luôn rồi đấy
