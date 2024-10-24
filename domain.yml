@@ -56,6 +56,7 @@ intents:
 - intent_bad__xac_nhan_danh_tinh
 - intent_bad__xac_nhan_thanh_toan
 - intent_bad__xac_nhan_chung
+- intent_kh_xin_gia_han_ngay_tra_no
 - intent_force_end
 - intent_faq1
 

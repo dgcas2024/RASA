@@ -173,6 +173,20 @@ nlu:
     - không phải đâu
     - không phải nhé
 
+- intent: intent_kh_xin_gia_han_ngay_tra_no
+  examples: |
+    - cho anh thanh toán muộn mấy hôm được không
+    - chị thanh toán trễ vài ngày được không
+    - tôi xin trả chậm mấy hôm
+    - anh xin trả trễ mấy ngày
+    - anh trả trễ vài hôm được không
+    - tầm [20/11/2024](entity_xin_gia_han_ngay_tra_no) anh trả được không
+    - đến [12/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả được không
+    - chị xin trả chậm vào ngày [12/11/2025](entity_xin_gia_han_ngay_tra_no) nhé
+    - ngày [12/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả nhé
+    - đến [30/10/2025](entity_xin_gia_han_ngay_tra_no) chị thanh toán được không
+    - chị xin thanh toán chậm vào ngày [12/12/2023](entity_xin_gia_han_ngay_tra_no) nhé
+
 - intent: intent_force_end
   examples: |
     - cút
