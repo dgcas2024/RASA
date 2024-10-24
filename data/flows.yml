@@ -7,6 +7,9 @@ flows:
     nlu_trigger:
     - intent: "intent_good__xac_nhan_chung"
     steps:
+    - collect: slot_receiver_name
+      ask_before_filling: false
+      reset_after_flow_ends: false
     - collect: slot_latest_run_step
       ask_before_filling: false
       reset_after_flow_ends: false
@@ -121,6 +124,9 @@ flows:
     - intent: "intent_good__xac_nhan_danh_tinh"
     steps:
     - action: utter_nhac_kh_tra_no_dung_han
+    - collect: slot_receiver_name
+      ask_before_filling: false
+      reset_after_flow_ends: false
     - collect: slot_latest_run_step
       ask_before_filling: false
       reset_after_flow_ends: false

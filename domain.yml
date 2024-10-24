@@ -11,6 +11,7 @@ slots:
 
   slot_receiver_name:
     type: text
+    initial_value: ""
     influence_conversation: true
     mappings:
     - type: from_entity
