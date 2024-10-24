@@ -100,7 +100,6 @@ flows:
     steps:
     - action: utter_xac_nhan_khach_hang
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_chao_hoi_khach_hang"
@@ -114,7 +113,6 @@ flows:
     steps:
     - action: utter_nhac_kh_tra_no_dung_han
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han"
@@ -126,7 +124,6 @@ flows:
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1"
@@ -138,7 +135,6 @@ flows:
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
@@ -150,7 +146,6 @@ flows:
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
@@ -162,7 +157,6 @@ flows:
     steps:
     - action: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_2"
@@ -176,7 +170,6 @@ flows:
     steps:
     - action: utter_nham_so_xin_loi_vi_lam_phien
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_nham_so_xin_loi_khach_hang"
@@ -188,7 +181,6 @@ flows:
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_good
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_ghi_nhan_thong_tin_tra_no_good"
@@ -200,7 +192,6 @@ flows:
     steps:
     - action: utter_ghi_nhan_thong_tin_tra_no_bad
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: "flow_ghi_nhan_thong_tin_tra_no_bad"
@@ -213,7 +204,6 @@ flows:
     steps:
     - action: utter_force_end
     - collect: slot_latest_run_step
-      ask_before_filling: false
       reset_after_flow_ends: false
     - set_slots:
       - slot_latest_run_step: ""
