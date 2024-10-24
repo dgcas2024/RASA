@@ -99,6 +99,10 @@ flows:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1"
         then: 
           - action: form_get_ly_do_khach_hang_khong_tra_no
+          - next: control_flow
+      - else: control_flow
+    - id: control_flow
+      next:
       - if: slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1" or slots.slot_latest_run_step = "flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_2"
         then:
           - link: flow_nhac_kh_tra_no_dung_han__bad_hoi_ly_do_lan_1
