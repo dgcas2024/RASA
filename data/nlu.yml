@@ -105,7 +105,6 @@ nlu:
 - intent: intent_bad__xac_nhan_danh_tinh
   examples: |
     - nhầm máy rồi
-    - không phải
     - nhầm rồi
     - nhầm người rồi
     - không, anh là [Nam](entity_receiver_name)
@@ -114,8 +113,12 @@ nlu:
     - lộn rồi
     - lộn số rồi
     - nhầm số rồi
-    - không phải anh ơi
-    - nhầm rồi chị ơi
+    - nhầm rồi, chị không phải Nam nhé
+    - nhầm rồi, chị không phải Ngọc nhé
+    - nhầm máy rồi em ơi
+    - lộn số rồi em ơi
+    - anh không phải là Tuấn nhé
+    - tôi không phải là Nhân nhé
 
 - intent: intent_bad__xac_nhan_thanh_toan
   examples: |
