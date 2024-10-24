@@ -21,6 +21,7 @@ jobs:
         run: |
           echo ${GITHUB_WORKSPACE} && ls ${GITHUB_WORKSPACE} && sudo docker run --rm -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
             -u $(id -u) \
             ${{ vars.RASA_IMAGE }} \
             train -c /app/config.yml --domain /app/domain.yml --endpoints /app/endpoints.yml --data /app/data --out /app/models
@@ -39,6 +40,7 @@ jobs:
         run: |
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
             -u $(id -u) \
             --name github_runner_dgcas2024_rasa_action_6007 \
             -p 6007:6007 \
@@ -51,6 +53,7 @@ jobs:
         run: |
           sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -e OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }} \
             -u $(id -u) \
             --name github_runner_dgcas2024_rasa_inspect_6006 \
             -p 6006:6006 \
