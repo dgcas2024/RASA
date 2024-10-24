@@ -40,9 +40,6 @@ slots:
     initial_value: ""
     mappings:
       - type: from_text
-        conditions:
-         - active_loop: form_get_ly_do_khach_hang_khong_tra_no
-           requested_slot: slot_ly_do_khach_hang_khong_tra_no
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
@@ -51,11 +48,6 @@ slots:
     mappings:
     - type: from_entity
       entity: entity_xin_gia_han_ngay_tra_no
-
-forms:
-  form_get_ly_do_khach_hang_khong_tra_no:
-    required_slots:
-      - slot_ly_do_khach_hang_khong_tra_no
 
 intents:
 - intent_start
