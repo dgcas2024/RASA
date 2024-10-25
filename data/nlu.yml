@@ -172,6 +172,11 @@ nlu:
     - sẽ không trả
     - sẽ không thanh toán
     - sẽ không trả đâu
+    - sẽ không trả nổi đâu
+    - sẽ không thanh toán nổi đâu
+    - chắc sẽ không trả
+    - chắc là không trả
+    - chắc là không thanh toán
 
 - intent: intent_bad__xac_nhan_chung
   examples: |
