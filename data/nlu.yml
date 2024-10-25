@@ -168,6 +168,10 @@ nlu:
     - trả gì mà trả
     - bữa này hơi kẹt
     - từ từ rồi trả
+    - không thanh toán được
+    - sẽ không trả
+    - sẽ không thanh toán
+    - sẽ không trả đâu
 
 - intent: intent_bad__xac_nhan_chung
   examples: |
