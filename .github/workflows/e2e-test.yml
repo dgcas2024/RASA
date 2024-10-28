@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'tests/e2e/**'
+      - '.github/workflows/e2e-test.yml'
 
 jobs:
   train_and_deploy:
@@ -21,7 +22,7 @@ jobs:
 
       - name: Run e2e test
         run: |
-          sudo docker run --rm -it -v ${GITHUB_WORKSPACE}:/app \
+          sudo docker run --rm -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             -u $(id -u) \
             -p 5007:5007 \
