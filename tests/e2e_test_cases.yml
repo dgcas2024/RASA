@@ -1,5 +1,5 @@
 ﻿test_cases:
-  - test_case: Không trả
+  - test_case: "xxxxxx"
     steps:
     - user: "alo"
     - utter: utter_xac_nhan_khach_hang

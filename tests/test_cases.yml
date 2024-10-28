@@ -1,5 +1,5 @@
 ﻿test_cases:
-  - test_case: Không trả
+  - test_case: "xxxxxx"
     steps:
     - user: "alo"
     - bot: "Chào anh/chị, cho em hỏi có phải anh Trần Xoáy đang nghe máy đúng không ạ?"
