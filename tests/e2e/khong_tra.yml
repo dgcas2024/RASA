@@ -1,7 +1,7 @@
 ﻿test_cases:
   - test_case: Không trả
     steps:
-    - user: "alo bạn ơi"
+    - user: "alo"
     - utter: utter_xac_nhan_khach_hang
     - utter: utter_can_do_something_else
     - user: "Không phải em ơi"
