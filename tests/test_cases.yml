@@ -2,4 +2,4 @@
   - test_case: Không trả
     steps:
     - user: "alo"
-    - utter: utter_xac_nhan_khach_hang
+    - bot: "Chào anh/chị, cho em hỏi có phải anh Trần Xoáy đang nghe máy đúng không ạ?"
