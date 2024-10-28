@@ -1,4 +1,4 @@
-name: Rasa Pro CI-CD Pipeline - e2e test 1
+name: Rasa Pro CI-CD Pipeline - e2e test 2
 
 on:
   push:
