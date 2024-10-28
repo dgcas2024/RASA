@@ -1,0 +1,29 @@
+name: Rasa Pro CI-CD Pipeline - e2e test
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'tests/e2e/**'
+
+jobs:
+  train_and_deploy:
+    runs-on: poptech
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Pull Rasa Pro image
+        run: |
+          sudo docker pull ${{ vars.RASA_IMAGE }}
+
+      - name: Run e2e test
+        run: |
+          sudo docker run --rm -it -v ${GITHUB_WORKSPACE}:/app \
+            -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
+            -u $(id -u) \
+            -p 5007:5007 \
+            ${{ vars.RASA_IMAGE }} \
+            test e2e  --model /app/models --endpoints /app/endpoints.yml --stories tests/e2e

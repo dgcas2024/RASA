@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'actions/**'
+      - 'data/**'
+      - 'config.yml'
+      - 'domain.yml'
+      - 'endpoints.yml'
+      - 'credentials.yml'
 
 jobs:
   train_and_deploy:
