@@ -2,4 +2,4 @@
   - test_case: "Không trả"
     steps:
     - user: "alo"
-    - bot: "Hi"
+    - utter: utter_xac_nhan_khach_hang
