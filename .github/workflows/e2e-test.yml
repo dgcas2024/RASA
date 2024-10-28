@@ -9,7 +9,7 @@ on:
       - '.github/workflows/e2e-test.yml'
 
 jobs:
-  train_and_deploy:
+  run_test_case:
     runs-on: poptech
 
     steps:
