@@ -13,8 +13,17 @@ jobs:
     runs-on: poptech
 
     steps:
-      #- name: Checkout repository
-      #  uses: actions/checkout@v3
+      - name: Backup models directory
+        run: |
+          mkdir -p /tmp/models_backup
+          cp -r models /tmp/models_backup/
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Restore models directory
+        run: |
+          cp -r /tmp/models_backup/models models
 
       - name: Pull Rasa Pro image
         run: |
