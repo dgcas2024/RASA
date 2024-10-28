@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'tests/e2e/**'
+      - 'tests/**'
       - '.github/workflows/e2e-test.yml'
 
 jobs:
