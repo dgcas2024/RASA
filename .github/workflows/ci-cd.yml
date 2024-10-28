@@ -1,4 +1,4 @@
-name: Rasa Pro CI-CD Pipeline 1
+name: Rasa Pro CI-CD Pipeline 2
 
 on:
   push:
