@@ -25,6 +25,5 @@ jobs:
           sudo docker run --rm -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             -u $(id -u) \
-            -p 5007:5007 \
             ${{ vars.RASA_IMAGE }} \
             test e2e  --model /app/models --endpoints /app/endpoints.yml --stories tests/e2e
