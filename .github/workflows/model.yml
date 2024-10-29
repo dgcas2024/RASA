@@ -1,12 +1,11 @@
-name: Rasa Pro CI-CD Pipeline 3.10.6 0
+name: Rasa Pro CI-CD Pipeline MODEL 3.10.6 0
 
 on:
   push:
     branches:
       - master
     paths:
-      - '.github/workflows/ci-cd.yml'
-      - 'actions/**'
+      - '.github/workflows/model.yml'
       - 'data/**'
       - 'config.yml'
       - 'domain.yml'
@@ -38,27 +37,10 @@ jobs:
           sudo docker container stop github_runner_dgcas2024_rasa_inspect_5006 && sudo docker container rm github_runner_dgcas2024_rasa_inspect_5006
         continue-on-error: true
 
-      - name: Stop current container action
-        run: |
-          sudo docker container stop github_runner_dgcas2024_rasa_action_5007 && sudo docker container rm github_runner_dgcas2024_rasa_action_5007
-        continue-on-error: true
-
       - name: Stop current container server
         run: |
           sudo docker container stop github_runner_dgcas2024_rasa_5005 && sudo docker container rm github_runner_dgcas2024_rasa_5005
         continue-on-error: true
-
-      - name: Run actions
-        run: |
-          sudo docker run --restart unless-stopped -d -v ${GITHUB_WORKSPACE}:/app \
-            -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
-            -u $(id -u) \
-            --name github_runner_dgcas2024_rasa_action_5007 \
-            -p 5007:5007 \
-            ${{ vars.RASA_IMAGE }} \
-            run actions \
-            --port 5007
-            #--cors "*"
 
       - name: Run inspect
         run: |
@@ -100,19 +82,6 @@ jobs:
 
       - name: Validate URL
         run: |
-          echo "Waiting for actions to be ready..."
-          timeout=300
-          while ! curl --output /dev/null --silent --fail http://127.0.0.1:5007/health; do
-            echo "Waiting for actions to be ready...$timeout"
-            sleep 1
-            timeout=$((timeout-1))
-            if [ "$timeout" -le 0 ]; then
-              echo "Timeout when start actions."
-              exit 1
-            fi
-          done
-          echo "Actions is ready."
-
           echo "Waiting for inspect to be ready..."
           timeout=300
           while ! curl --output /dev/null --silent --fail http://127.0.0.1:5006/status; do
