@@ -70,10 +70,10 @@ class ActionGetThongTinCuocGoi(Action):
         customer_debt_amount = "0"
         if record is not None:
             #sender_id = record["sender_id"]
-            customer_title = record["customer_title"]
-            customer_name = record["customer_name"]
-            customer_debt_due_date = record["customer_debt_due_date"]
-            customer_debt_amount = record["customer_debt_amount"]
+            customer_title = record[1]
+            customer_name = record[2]
+            customer_debt_due_date = record[3]
+            customer_debt_amount = record[4]
         
         return [
             SlotSet("slot_customer_title", customer_title),
