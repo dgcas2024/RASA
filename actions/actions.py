@@ -33,6 +33,33 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
+class ActionGetThongTinCuocGoi(Action):
+    def name(self) -> Text:
+        return "action_get_thong_tin_cuoc_goi"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        conn = psycopg2.connect(
+            dbname="rasa",
+            user="poptech",
+            password="metqu@D1",
+            host="10.120.80.61",
+            port="30011"
+        )
+        cursor = conn.cursor()
+        cursor.execute(
+            "SELECT top 1 * from conversation_info where sender_id = %s",
+            (tracker.sender_id,)
+        )
+        records = cursor.fetchall()
+        if (records.len())
+        
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return []
+
 class ActionSetSlotLyDoKhachHangKhongTraNo(Action):
     def name(self) -> Text:
         return "action_set_slot_ly_do_khach_hang_khong_tra_no"
@@ -40,7 +67,6 @@ class ActionSetSlotLyDoKhachHangKhongTraNo(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("action_set_slot_ly_do_khach_hang_khong_tra_no...")
         last_message = tracker.latest_message.get('text')
         return [SlotSet("slot_ly_do_khach_hang_khong_tra_no", last_message)]
 
@@ -51,7 +77,6 @@ class SubmitConversation(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        print("action_submit_conversation...")
         json_object = {
             "sender_id": tracker.sender_id,
             "slot_receiver_name": tracker.get_slot("slot_receiver_name"),
