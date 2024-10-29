@@ -2,7 +2,7 @@
   - test_case: goi nham khach hang
     steps:
       - user: Alo
-      - slot_was_set:
-          - slot_latest_run_step: flow_chao_hoi_khach_hang
       - utter: utter_xac_nhan_khach_hang
       - utter: utter_can_do_something_else
+      - slot_was_set:
+        - slot_latest_run_step: flow_chao_hoi_khach_hang
