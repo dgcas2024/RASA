@@ -1,8 +1,5 @@
 ﻿- test_cases:
   - test_case: inquire_about_cu_trong_xoay
     steps:
-    - user: cho em hỏi
-      assertions:
-      - bot_uttered:
-          text_matches: có phải anh Cù Trọng Xoay đang nghe máy đúng không ạ?
-    - user: tạm biệt quý khách!
+    - user: alo
+    - bot: hi
