@@ -69,11 +69,11 @@ class ActionGetThongTinCuocGoi(Action):
         customer_debt_due_date = datetime.now().strftime("%d/%m/%Y")
         customer_debt_amount = "0"
         if record is not None:
-            #sender_id = record["sender_id"]
-            customer_title = record[1]
-            customer_name = record[2]
-            customer_debt_due_date = record[3]
-            customer_debt_amount = record[4]
+            #sender_id = record[cursor.description.index(("sender_id",))]
+            customer_title = record[cursor.description.index(("customer_title",))]
+            customer_name = record[cursor.description.index(("customer_name",))]
+            customer_debt_due_date = record[cursor.description.index(("customer_debt_due_date",))]
+            customer_debt_amount = record[cursor.description.index(("customer_debt_amount",))]
         
         return [
             SlotSet("slot_customer_title", customer_title),
