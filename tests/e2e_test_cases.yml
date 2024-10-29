@@ -1,43 +1,21 @@
 ﻿test_cases:
-- test_case: transfer charge
+- test_case: "Không trả 3"
   steps:
-  - user: how can I send money without getting charged?
-  - utter: utter_faq_0
-  - user: not zelle. a normal transfer
-  - utter: utter_faq_7
-- test_case: add cc user 01
-  steps:
-  - user: I'd like to add my wife to my credit card
-  - utter: utter_faq_10
-  - user: I'm watching the kids today tho
-  - utter: utter_faq_11
-- test_case: add cc user 02
-  steps:
-  - user: please add my son to my card
-  - utter: utter_faq_10
-  - user: My car's in the shop
-  - utter: utter_faq_11
-- test_case: add cc user 03
-  steps:
-  - user: please add my son to my card
-  - utter: utter_faq_10
-  - user: they're coming to read my meter today
-  - utter: utter_faq_11
-- test_case: add cc user 04
-  steps:
-  - user: please add my son to my card
-  - utter: utter_faq_10
-  - user: I'm on vacation
-  - utter: utter_faq_11
-- test_case: add cc user 05
-  steps:
-  - user: i want my daughter to be able to use my card
-  - utter: utter_faq_10
-  - user: I don't have time for that
-  - utter: utter_faq_11
-- test_case: add cc user 06
-  steps:
-  - user: i want my daughter to be able to use my card
-  - utter: utter_faq_10
-  - user: I've got a broken ankle
-  - utter: utter_faq_11
+  - user: "alo"
+  - utter: utter_xac_nhan_khach_hang
+  - utter: utter_can_do_something_else
+  - user: "Không phải em ơi"
+  - utter: utter_nhac_kh_tra_no_dung_han
+  - utter: utter_can_do_something_else
+  - user: "chịu rồi"
+  - utter: utter_xin_khach_hang_noi_lai
+  - utter: utter_can_do_something_else
+  - user: "chịu rồi, anh không trả được"
+  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
+  - utter: utter_can_do_something_else
+  - user: "không thích trả"
+  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
+  - utter: utter_can_do_something_else
+  - user: "ừ anh không trả"
+  - utter: utter_ghi_nhan_thong_tin_tra_no_bad
+  - utter: utter_can_do_something_else
