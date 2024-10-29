@@ -1,11 +1,21 @@
 ﻿test_cases:
-- test_case: goi_nham_so
+- test_case: "Không trả 1"
   steps:
-    - user: "alo"
-      assertions:
-        - bot_uttered:
-            text_matches: "Chào anh/chị, cho em hỏi, có phải anh Cù Trọng Xoay đang nghe máy đúng không ạ?"
-    - user: "nhầm rồi em"
-      assertions:
-        - bot_uttered:
-            text_matches: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
+  - user: "alo"
+  - utter: utter_xac_nhan_khach_hang
+  - utter: utter_can_do_something_else
+  - user: "Không phải em ơi"
+  - utter: utter_nhac_kh_tra_no_dung_han
+  - utter: utter_can_do_something_else
+  - user: "chịu rồi"
+  - utter: utter_xin_khach_hang_noi_lai
+  - utter: utter_can_do_something_else
+  - user: "chịu rồi, anh không trả được"
+  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
+  - utter: utter_can_do_something_else
+  - user: "không thích trả"
+  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
+  - utter: utter_can_do_something_else
+  - user: "ừ anh không trả"
+  - utter: utter_ghi_nhan_thong_tin_tra_no_bad
+  - utter: utter_can_do_something_else
