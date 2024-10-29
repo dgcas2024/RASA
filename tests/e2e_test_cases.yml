@@ -1,8 +1,43 @@
-﻿- test_cases:
-  - test_case: inquire_about_cu_trong_xoay
-    steps:
-    - user: cho em hỏi
-      assertions:
-      - bot_uttered:
-          text_matches: có phải anh Cù Trọng Xoay đang nghe máy đúng không ạ?
-    - user: tạm biệt quý khách!
+﻿test_cases:
+- test_case: transfer charge
+  steps:
+  - user: how can I send money without getting charged?
+  - utter: utter_faq_0
+  - user: not zelle. a normal transfer
+  - utter: utter_faq_7
+- test_case: add cc user 01
+  steps:
+  - user: I'd like to add my wife to my credit card
+  - utter: utter_faq_10
+  - user: I'm watching the kids today tho
+  - utter: utter_faq_11
+- test_case: add cc user 02
+  steps:
+  - user: please add my son to my card
+  - utter: utter_faq_10
+  - user: My car's in the shop
+  - utter: utter_faq_11
+- test_case: add cc user 03
+  steps:
+  - user: please add my son to my card
+  - utter: utter_faq_10
+  - user: they're coming to read my meter today
+  - utter: utter_faq_11
+- test_case: add cc user 04
+  steps:
+  - user: please add my son to my card
+  - utter: utter_faq_10
+  - user: I'm on vacation
+  - utter: utter_faq_11
+- test_case: add cc user 05
+  steps:
+  - user: i want my daughter to be able to use my card
+  - utter: utter_faq_10
+  - user: I don't have time for that
+  - utter: utter_faq_11
+- test_case: add cc user 06
+  steps:
+  - user: i want my daughter to be able to use my card
+  - utter: utter_faq_10
+  - user: I've got a broken ankle
+  - utter: utter_faq_11
