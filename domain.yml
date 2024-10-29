@@ -3,6 +3,7 @@
 actions:
 - action_set_slot_ly_do_khach_hang_khong_tra_no
 - action_submit_conversation
+- action_get_thong_tin_cuoc_goi
 
 entities:
 - entity_receiver_name
@@ -24,19 +25,15 @@ slots:
 
   slot_customer_title:
     type: text
-    initial_value: anh
 
   slot_customer_name:
     type: text
-    initial_value: Cù Trọng Xoay
 
   slot_customer_debt_due_date:
     type: text
-    initial_value: 20/10/2024
 
   slot_customer_debt_amount:
     type: text
-    initial_value: "20.000.000"
 
   slot_ly_do_khach_hang_khong_tra_no:
     type: text
