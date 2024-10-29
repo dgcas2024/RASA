@@ -32,6 +32,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+from datetime import datetime
 
 class ActionGetThongTinCuocGoi(Action):
     def name(self) -> Text:
@@ -52,13 +53,28 @@ class ActionGetThongTinCuocGoi(Action):
             "SELECT top 1 * from conversation_info where sender_id = %s",
             (tracker.sender_id,)
         )
-        records = cursor.fetchall()
-        if (records.len())
-        
+        record = cursor.fetchone()
         conn.commit()
         cursor.close()
         conn.close()
-        return []
+        #sender_id = "0"
+        customer_title = "anh"
+        customer_name = "Nam"
+        customer_debt_due_date = datetime.now().strftime("%d/%m/%Y")
+        customer_debt_amount = "0"
+        if record is not None:
+            #sender_id = record["sender_id"]
+            customer_title = record["customer_title"]
+            customer_name = record["customer_name"]
+            customer_debt_due_date = record["customer_debt_due_date"]
+            customer_debt_amount = record["customer_debt_amount"]
+        
+        return [
+            SlotSet("slot_customer_title", customer_title),
+            SlotSet("slot_customer_name", customer_name),
+            SlotSet("slot_customer_debt_due_date", customer_debt_due_date),
+            SlotSet("slot_customer_debt_amount", customer_debt_amount)
+        ]
 
 class ActionSetSlotLyDoKhachHangKhongTraNo(Action):
     def name(self) -> Text:
