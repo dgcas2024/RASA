@@ -35,4 +35,4 @@ jobs:
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
             -u $(id -u) \
             ${{ vars.RASA_IMAGE }} \
-            test e2e  --model /app/models --endpoints /app/endpoints.yml /app/tests/e2e_test_cases.yml
+            test e2e --model /app/models --endpoints /app/endpoints.yml /app/tests/e2e_test_cases.yml
