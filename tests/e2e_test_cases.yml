@@ -1,15 +1,11 @@
 ﻿test_cases:
-- test_case: flight_booking
+- test_case: goi_nham_so
   steps:
-    - user: "I want to book a flight"
+    - user: "alo"
       assertions:
         - bot_uttered:
-            text_matches: "Where would you like to fly to?"
-    - user: "New York"
+            text_matches: "Chào anh/chị, cho em hỏi, có phải anh Cù Trọng Xoay đang nghe máy đúng không ạ?"
+    - user: "nhầm rồi em"
       assertions:
         - bot_uttered:
-            text_matches: "When would you like to travel?"
-    - user: "Tomorrow"
-      assertions:
-        - bot_uttered:
-            text_matches: "Please wait while I check the available flights."
+            text_matches: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
