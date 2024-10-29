@@ -1,5 +1,5 @@
 ﻿test_cases:
-  - test_case: goi nham khach hang
+  - test_case: goi_nham_khach_hang
     steps:
       - user: Alo
       - utter: utter_xac_nhan_khach_hang
