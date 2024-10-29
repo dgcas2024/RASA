@@ -50,10 +50,15 @@ class ActionGetThongTinCuocGoi(Action):
         )
         cursor = conn.cursor()
         cursor.execute(
-            "SELECT top 1 * from conversation_info where sender_id = %s",
+            "SELECT * from conversation_info where sender_id = %s LIMIT 1",
             (tracker.sender_id,)
         )
         record = cursor.fetchone()
+        if record is None:
+            cursor.execute(
+                "SELECT * from conversation_info order by RANDOM() LIMIT 1",
+                (tracker.sender_id,)
+            )
         conn.commit()
         cursor.close()
         conn.close()
