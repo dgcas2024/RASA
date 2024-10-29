@@ -65,29 +65,27 @@ intents:
 
 responses:
   utter_xac_nhan_khach_hang:
-  - text: "Chào anh/chị, cho em hỏi có phải {slot_customer_title} {slot_customer_name} đang nghe máy đúng không ạ?"
-  - text: "Chào anh/chị, cho em hỏi có phải anh Trần Xoáy đang nghe máy đúng không ạ?"
-  - text: "Chào anh/chị, cho em hỏi có phải anh Long Hách đang nghe máy đúng không ạ?"
+  - text: "Chào anh/chị, cho em hỏi, có phải {slot_customer_title} {slot_customer_name} đang nghe máy đúng không ạ?"
   utter_nhac_kh_tra_no_dung_han:
-  - text: "Dạ {slot_customer_title} {slot_customer_name}, em là chuyên viên phòng xử lý tín dụng qua điện thoại, công ty tài chính FE CREDIT, em gọi đến để nhắc về hợp đồng vay nợ của anh sắp đến hạn thanh toán vào ngày {slot_customer_debt_due_date}, với số tiền cần thanh toán là {slot_customer_debt_amount} đồng, anh sẽ thanh toán {slot_customer_debt_amount} đúng hạn phải không ạ?"
+  - text: "{slot_customer_title} {slot_customer_name}, em là chuyên viên phòng xử lý tín dụng, công ty tài chính ép e cờ re đít, em gọi để nhắc về hợp đồng vay của {slot_customer_title}, sắp đến hạn thanh toán vào ngày {slot_customer_debt_due_date}. Số tiền {slot_customer_title} cần thanh toán là {slot_customer_debt_amount} đồng, {slot_customer_title} sẽ thanh toán hợp đồng đúng hạn phải không?"
   utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1:
-  - text: "Em xác nhận là anh đồng ý thanh toán vào ngày {slot_customer_debt_due_date}, với số tiền {slot_customer_debt_amount} cho công ty em đúng không ạ?"
+  - text: "Em xác nhận lại, là {slot_customer_title} đồng ý thanh toán, vào ngày {slot_customer_debt_due_date}, với số tiền {slot_customer_debt_amount} cho công ty em đúng không?"
   utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2:
-  - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của anh, anh vui lòng giữ đúng cam kết chứ ạ?"
+  - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của {slot_customer_title}, {slot_customer_title} vui lòng giữ đúng cam kết chứ ạ?"
   utter_ghi_nhan_thong_tin_tra_no_good:
-  - text: "Em đã ghi nhận cam kết thanh toán của anh, vui lòng giữ lại biên lai sau khi thanh toán, cần hỗ trợ thêm, anh liên hệ Kênh Zalo FE CREDIT hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
+  - text: "Em đã ghi nhận cam kết thanh toán của {slot_customer_title}, vui lòng giữ lại biên lai sau khi thanh toán, cần hỗ trợ thêm, {slot_customer_title} liên hệ Kênh gia lô ép e cờ re đít hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc {slot_customer_title} 1 ngày tốt lành!"
   utter_ghi_nhan_thong_tin_tra_no_bad:
-  - text: "Em ghi nhận thông tin. Em đã cố gắng hỗ trợ nhưng anh vẫn không đồng ý thanh toán. Công ty sẽ tiếp tục quy trình xử lý tín dụng. anh cần sắp xếp thanh toán càng sớm càng tốt để nhận được những lợi ích cho hợp đồng tín dụng của mình. Cần hỗ trợ thêm, anh vui lòng liên hệ Kênh Zalo FE Credit hoặc Hotline 19006535 đối với hợp đồng tín dụng hoặc 19006939 đối với thẻ tín dụng. Em cảm ơn và chúc anh 1 ngày tốt lành!"
+  - text: "Em ghi nhận phản hồi. Là hiện {slot_customer_title} chưa đồng ý thanh toán. {slot_customer_title} hãy thanh toán sớm, để nhận những lợi ích cho hợp đồng. Nếu cần hỗ trợ, {slot_customer_title} hãy liên hệ kênh gia lô ép e cờ re đít, hoặc hotline 19006535, đối với hợp đồng tín dụng, hoặc 19006939, đối với thẻ tín dụng. Em cảm ơn và chúc {slot_customer_title} 1 ngày tốt lành!"
   utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1:
-  - text: "Lý do gì mà anh không thanh toán đủ tiền cho công ty đúng hạn vậy ạ?"  
+  - text: "{slot_customer_title} có khó khăn gì ? khi không thể thanh toán theo hợp đồng được ạ?"  
   utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2:
-  - text:   "Anh vui lòng thanh toán {slot_customer_debt_amount} đồng đúng hạn để tránh việc Hợp đồng của anh phát sinh thêm chi phí ngoài kế hoạch do thanh toán trễ, làm ảnh hưởng đến tài chính và công việc của mình. Nhiều trường hợp Khách hàng khó khăn tuy nhiên vẫn vay mượn người thân/ ứng lương hoặc làm việc bán thời gian để hoàn thành nghĩa vụ thanh toán. Vậy anh sẽ thu xếp thanh toán {slot_customer_debt_amount} đồng đúng hạn chứ ạ?"
+  - text: "Em hiểu khó khăn của {slot_customer_title}. Khi {slot_customer_title} thanh toán trễ, thì sẽ bị phát sinh chi phí phạt ngoài kế hoạch, khi đó lại càng bất lợi cho tài chính của mình. Nhiều khách hàng Đề nghị, {slot_customer_title} thử xem xét phương án mượn người thân, hoặc ứng lương để thanh toán. {slot_customer_title} xem, có thu xếp phương án nào để thanh toán, đúng hạn được không {slot_customer_title}?"
   utter_nham_so_xin_loi_vi_lam_phien:
   - text: "Xin lỗi vì đã làm phiền quý khách, tạm biệt quý khách!"
   utter_xin_khach_hang_noi_lai:
-  - text: "Dạ em xin lỗi, {slot_customer_title} có thể vui lòng nhắc lại ý của {slot_customer_title} không ạ?"
+  - text: "Em xin lỗi, em nghe chưa rõ. {slot_customer_title} có thể vui lòng nhắc lại được không?"
   utter_tu_choi_han_ngay_tra_no:
-  - text: "Dạ em xin lỗi, em không thể hỗ trợ vấn đề này, anh vui lòng trả nợ đúng hạn ạ theo hợp đồng đã cam kết ạ"
+  - text: "Em xin lỗi, em không thể hỗ trợ vấn đề này. {slot_customer_title} vui lòng trả nợ đúng hạn ạ theo hợp đồng đã cam kết ạ"
   utter_force_end:
   - text: "Tạm biệt quý khách!"
   utter_can_do_something_else:
