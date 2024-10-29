@@ -1,21 +1,5 @@
 ﻿test_cases:
-- test_case: "Không trả"
+- test_case: "test_greet"
   steps:
-  - user: "alo"
-  - utter: utter_xac_nhan_khach_hang
-  - utter: utter_can_do_something_else
-  - user: "Không phải em ơi"
-  - utter: utter_nhac_kh_tra_no_dung_han
-  - utter: utter_can_do_something_else
-  - user: "chịu rồi"
-  - utter: utter_xin_khach_hang_noi_lai
-  - utter: utter_can_do_something_else
-  - user: "chịu rồi, anh không trả được"
-  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
-  - utter: utter_can_do_something_else
-  - user: "không thích trả"
-  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
-  - utter: utter_can_do_something_else
-  - user: "ừ anh không trả"
-  - utter: utter_ghi_nhan_thong_tin_tra_no_bad
-  - utter: utter_can_do_something_else
+  - user: "hello there!"
+  - bot: "Hey! How are you?"
