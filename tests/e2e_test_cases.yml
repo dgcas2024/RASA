@@ -1,21 +1,17 @@
 ﻿test_cases:
-- test_case: "Không trả 1"
-  steps:
-  - user: "alo"
-  - utter: utter_xac_nhan_khach_hang
-  - utter: utter_can_do_something_else
-  - user: "Không phải em ơi"
-  - utter: utter_nhac_kh_tra_no_dung_han
-  - utter: utter_can_do_something_else
-  - user: "chịu rồi"
-  - utter: utter_xin_khach_hang_noi_lai
-  - utter: utter_can_do_something_else
-  - user: "chịu rồi, anh không trả được"
-  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_1
-  - utter: utter_can_do_something_else
-  - user: "không thích trả"
-  - utter: utter_phan_hoi_tra_no_dung_han_bad_hoi_ly_do_lan_2
-  - utter: utter_can_do_something_else
-  - user: "ừ anh không trả"
-  - utter: utter_ghi_nhan_thong_tin_tra_no_bad
-  - utter: utter_can_do_something_else
+  - test_case: user books a restaurant # name of the test case must be provided and be unique
+    steps:
+      - user: I want to book a table for 4 at Xaigon for 8pm tonight
+      - slot_was_set: # slot_was_set/slot_was_not_set can contain multiple slot names or key-value pairs
+          - book_restaurant_name_of_restaurant: Xaigon
+          - book_restaurant_number_of_people: "4"
+          - book_restaurant_date: tonight
+          - book_restaurant_time: 8pm
+      - utter: utter_restaurant_available # utter is used for predefined domain utterances
+      - utter: utter_ask_book_restaurant_reservation_name
+      - user: Emil
+      - slot_was_set:
+          - book_restaurant_reservation_name: Emil
+      - utter: utter_ask_book_restaurant_confirmation
+      - user: yes
+      - bot: Thank you for booking the table at Xaigon for 4 people at 8pm tonight. # bot is used to match textual responses
