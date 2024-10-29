@@ -33,7 +33,8 @@ jobs:
         run: |
           sudo docker run --rm -v ${GITHUB_WORKSPACE}:/app \
             -e RASA_PRO_LICENSE=${{ secrets.RASA_PRO_LICENSE }} \
-            -e RASA_PRO_BETA_E2E_ASSERTIONS=True \
+            -e RASA_PRO_BETA_E2E_ASSERTIONS=true \
+            -e RASA_PRO_BETA_E2E_CONVERSION=true \
             -u $(id -u) \
             ${{ vars.RASA_IMAGE }} \
             test e2e --model /app/models --endpoints /app/endpoints.yml /app/tests/e2e_test_cases.yml
