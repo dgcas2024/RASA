@@ -59,6 +59,7 @@ class ActionGetThongTinCuocGoi(Action):
                 "SELECT * from conversation_info order by RANDOM() LIMIT 1",
                 (tracker.sender_id,)
             )
+        record = cursor.fetchone()
         conn.commit()
         cursor.close()
         conn.close()
