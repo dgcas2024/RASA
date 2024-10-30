@@ -97,7 +97,7 @@ class ActionCheckKHXinGiaHanNo(Action):
     def name(self) -> Text:
         return "action_check_kh_xin_gia_han_ngay_tra_no"
 
-    def check_and_convert_date(date_string: str) -> datetime:
+    def check_and_convert_date(self, date_string: str) -> datetime:
         pattern = r"^\d{1,2}/\d{1,2}/\d{4}$"
         if re.match(pattern, date_string):
             try:
@@ -119,17 +119,23 @@ class ActionCheckKHXinGiaHanNo(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        kh_xin = tracker.get_slot("slot_xin_gia_han_ngay_tra_no");
+        kh_xin = tracker.get_slot("slot_xin_gia_han_ngay_tra_no")
         date = self.check_and_convert_date(kh_xin)
+        try:
+            ngay_hop_dong = datetime.strptime(tracker.get_slot("slot_customer_debt_due_date"), "%d/%m/%Y")
+        except:
+            return [
+                dispatcher.utter_message(template= "utter_tu_choi_han_ngay_tra_no")
+            ]
         if date is None:
             return [dispatcher.utter_message(template = "utter_tu_choi_han_ngay_tra_no")]
         today = datetime.now().today()
-        if date > today:
+        if date > ngay_hop_dong or date <= today:
             return [
                 SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y")),
                 dispatcher.utter_message(template= "utter_tu_choi_han_ngay_tra_no")
             ]
-        if date == today:
+        if date == ngay_hop_dong:
             return [SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))]
         return [
             SlotSet("slot_xin_gia_han_ngay_tra_no__tra_som_han", date.strftime("%d/%m/%Y")),
