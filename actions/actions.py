@@ -179,4 +179,4 @@ class SubmitConversation(Action):
         conn.commit()
         cursor.close()
         conn.close()
-        return []
+        return [dispatcher.utter_message(response = "utter_xac_nhan_khach_hang")]
