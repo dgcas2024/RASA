@@ -222,6 +222,8 @@ nlu:
     - [tháng sau](entity_xin_gia_han_ngay_tra_no) thanh toán nha em
     - [cuối tháng](entity_xin_gia_han_ngay_tra_no) thanh toán
     - [năm sau](entity_xin_gia_han_ngay_tra_no) thanh toán nha em
+    - [cuối tháng](entity_xin_gia_han_ngay_tra_no) trả
+    - [năm sau](entity_xin_gia_han_ngay_tra_no) trả
     - [qua năm](entity_xin_gia_han_ngay_tra_no) chị thanh toán
     - [16](entity_xin_gia_han_ngay_tra_no) chị thanh toán được không
     - [11](entity_xin_gia_han_ngay_tra_no) này anh trả
