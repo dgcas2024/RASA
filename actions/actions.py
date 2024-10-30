@@ -125,20 +125,28 @@ class ActionCheckKHXinGiaHanNo(Action):
             ngay_hop_dong = datetime.strptime(tracker.get_slot("slot_customer_debt_due_date"), "%d/%m/%Y")
         except:
             return [
-                dispatcher.utter_message(response= "utter_tu_choi_han_ngay_tra_no")
+                SlotSet("slot_xin_gia_han_ngay_tra_no__status", "tre_hoac_khong_xd"),
+                dispatcher.utter_message(response = "utter_tu_choi_han_ngay_tra_no")
             ]
         if date is None:
-            return [dispatcher.utter_message(response = "utter_tu_choi_han_ngay_tra_no")]
+            return [
+                SlotSet("slot_xin_gia_han_ngay_tra_no__status", "tre_hoac_khong_xd"),
+                dispatcher.utter_message(response = "utter_tu_choi_han_ngay_tra_no")
+            ]
         today = datetime.now().today()
         if date > ngay_hop_dong or date <= today:
             return [
+                SlotSet("slot_xin_gia_han_ngay_tra_no__status", "tre_hoac_khong_xd"),
                 SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y")),
-                dispatcher.utter_message(response= "utter_tu_choi_han_ngay_tra_no")
+                dispatcher.utter_message(response = "utter_tu_choi_han_ngay_tra_no")
             ]
         if date == ngay_hop_dong:
-            return [SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))]
+            return [
+                SlotSet("slot_xin_gia_han_ngay_tra_no__status", "cung_ngay"),
+                SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))
+            ]
         return [
-            SlotSet("slot_xin_gia_han_ngay_tra_no__tra_som_han", True),
+            SlotSet("slot_xin_gia_han_ngay_tra_no__status", "som"),
             SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))
         ]
 

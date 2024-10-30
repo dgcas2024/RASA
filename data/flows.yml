@@ -165,11 +165,16 @@ flows:
     nlu_trigger:
     - intent: "intent_kh_xin_gia_han_ngay_tra_no"
     steps:
-    - collect: slot_xin_gia_han_ngay_tra_no__tra_som_han
+    - collect: slot_xin_gia_han_ngay_tra_no__status
       reset_after_flow_ends: false
     - collect: slot_xin_gia_han_ngay_tra_no
       reset_after_flow_ends: false
     - action: action_check_kh_xin_gia_han_ngay_tra_no
+      next:
+      - if: slots.slot_xin_gia_han_ngay_tra_no__status = "som" or slots.slot_xin_gia_han_ngay_tra_no__status = "cung_ngay"
+        then:
+        - link: flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1
+      - else: END
   
   flow_nhac_kh_tra_no_dung_han__good_xac_nhan_lan_1:
     description: "Xác nhận lần 1 khi khách hàng xác nhận trả nợ đúng hạn"
@@ -178,7 +183,7 @@ flows:
     steps:
     - noop:
       next:
-      - if: slots.slot_xin_gia_han_ngay_tra_no__tra_som_han
+      - if: slots.slot_xin_gia_han_ngay_tra_no__status = "som"
         then: 
         - action: utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1__tra_som_han
           next: continue

@@ -45,9 +45,13 @@ slots:
     influence_conversation: true
     initial_value: ""
 
-  slot_xin_gia_han_ngay_tra_no__tra_som_han:
-    type: bool
-    initial_value: false
+  slot_xin_gia_han_ngay_tra_no__status:
+    type: categorical
+    values:
+    - som
+    - tre_hoac_khong_xd
+    - cung_ngay
+    initial_value: "cung_ngay"
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
