@@ -104,9 +104,9 @@ responses:
   utter_can_do_something_else:
   - text: ""
   utter_faq_han_tra_no:
-  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} có hạn chót thanh toán là ngày {slot_customer_debt_due_date} ạ"
+  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} có hạn chót thanh toán là ngày {slot_customer_debt_due_date}, anh đồng ý sẽ thanh toán đúng hạn chứ ạ"
   utter_faq_so_tien_no:
-  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount} đồng ạ"
+  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount} đồng, anh đồng ý sẽ thanh toán đúng hạn chứ ạ"
 
 session_config:
   session_expiration_time: 5
