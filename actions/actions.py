@@ -125,15 +125,15 @@ class ActionCheckKHXinGiaHanNo(Action):
             ngay_hop_dong = datetime.strptime(tracker.get_slot("slot_customer_debt_due_date"), "%d/%m/%Y")
         except:
             return [
-                dispatcher.utter_message(template= "utter_tu_choi_han_ngay_tra_no")
+                dispatcher.utter_message(response= "utter_tu_choi_han_ngay_tra_no")
             ]
         if date is None:
-            return [dispatcher.utter_message(template = "utter_tu_choi_han_ngay_tra_no")]
+            return [dispatcher.utter_message(response = "utter_tu_choi_han_ngay_tra_no")]
         today = datetime.now().today()
         if date > ngay_hop_dong or date <= today:
             return [
                 SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y")),
-                dispatcher.utter_message(template= "utter_tu_choi_han_ngay_tra_no")
+                dispatcher.utter_message(response= "utter_tu_choi_han_ngay_tra_no")
             ]
         if date == ngay_hop_dong:
             return [SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))]
