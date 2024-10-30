@@ -256,3 +256,20 @@ nlu:
     - nợ bao nhiêu vậy
     - em nói bao nhiêu
     - bao nhiêu tiền
+
+- intent: intent_khach_hang_ban
+  examples: |
+    - bận rồi
+    - gọi lại sau
+    - đang mắc việc
+    - tối gọi lại
+    - trưa gọi lại
+    - chiều gọi lại
+    - anh đang họp, gọi lại sau
+    - anh đang bận
+    - giờ không nghe máy được
+    - ồn quá gọi lại sau
+    - chị đang bận
+    - trưa gọi lại cho chị
+    - giờ đang không rảnh
+    - đang có việc

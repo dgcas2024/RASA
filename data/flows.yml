@@ -286,6 +286,14 @@ flows:
     steps:
     - action: utter_xin_khach_hang_noi_lai
   
+  flow_khach_hang_ban:
+    description: "Khách hàng bắt máy trả lời bận"
+    always_include_in_prompt: true
+    nlu_trigger:
+    - intent: "intent_khach_hang_ban"
+    steps:
+    - action: utter_khach_hang_ban
+
   flow_faq_han_tra_no:
     description: "Khách hàng hỏi về ngày trả nợ"
     always_include_in_prompt: true
