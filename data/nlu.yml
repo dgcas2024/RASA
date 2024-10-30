@@ -192,22 +192,39 @@ nlu:
 
 - intent: intent_kh_xin_gia_han_ngay_tra_no
   examples: |
-    - cho anh thanh toán muộn mấy hôm được không
-    - chị thanh toán trễ vài ngày được không
-    - tôi xin trả chậm mấy hôm
-    - anh xin trả trễ mấy ngày
-    - anh trả trễ vài hôm được không
-    - tầm [20/11/2024](entity_xin_gia_han_ngay_tra_no) anh trả được không
-    - đến [12/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả được không
+    - cho anh [thanh toán muộn](entity_xin_gia_han_ngay_tra_no) mấy hôm được không
+    - chị [thanh toán trễ](entity_xin_gia_han_ngay_tra_no) vài ngày được không
+    - tôi xin [trả chậm](entity_xin_gia_han_ngay_tra_no) mấy hôm
+    - anh xin [trả trễ](entity_xin_gia_han_ngay_tra_no) mấy ngày
+    - anh [trả trễ](entity_xin_gia_han_ngay_tra_no) vài hôm được không
+    - anh [trả trước một ít](entity_xin_gia_han_ngay_tra_no) được không
+    - chị [trả trước một ít](entity_xin_gia_han_ngay_tra_no) được không
+    - tầm [15/11/2024](entity_xin_gia_han_ngay_tra_no) anh trả được không
+    - đến [16/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả được không
     - chị xin trả chậm vào ngày [12/11/2025](entity_xin_gia_han_ngay_tra_no) nhé
-    - ngày [12/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả nhé
+    - ngày [22/11/2025](entity_xin_gia_han_ngay_tra_no) chị trả nhé
     - đến [30/10/2025](entity_xin_gia_han_ngay_tra_no) chị thanh toán được không
-    - chị xin thanh toán chậm vào ngày [12/12/2023](entity_xin_gia_han_ngay_tra_no) nhé
+    - chị xin thanh toán chậm vào ngày [20/12/2023](entity_xin_gia_han_ngay_tra_no) nhé
     - ngày [25](entity_xin_gia_han_ngay_tra_no) anh trả
+    - ngày [25](entity_xin_gia_han_ngay_tra_no) anh thanh toán
+    - mùng [8](entity_xin_gia_han_ngay_tra_no) anh trả
+    - mùng [2](entity_xin_gia_han_ngay_tra_no) chị trả
+    - ngày [9](entity_xin_gia_han_ngay_tra_no) chị thanh toán
+    - [tháng 11](entity_xin_gia_han_ngay_tra_no) anh trả
+    - [tháng 6](entity_xin_gia_han_ngay_tra_no) chị trả
+    - qua [tháng 10](entity_xin_gia_han_ngay_tra_no) chị trả
+    - qua [tháng 10](entity_xin_gia_han_ngay_tra_no) chị trả
     - [qua tháng](entity_xin_gia_han_ngay_tra_no) anh trả được không
+    - [qua tuần](entity_xin_gia_han_ngay_tra_no) trả
     - [cuối tuần](entity_xin_gia_han_ngay_tra_no) chị trả được không
+    - [cuối tuần](entity_xin_gia_han_ngay_tra_no) chị trả
     - [tuần sau](entity_xin_gia_han_ngay_tra_no) thanh toán được không
     - [tháng sau](entity_xin_gia_han_ngay_tra_no) thanh toán nha em
+    - [cuối tháng](entity_xin_gia_han_ngay_tra_no) thanh toán
+    - [năm sau](entity_xin_gia_han_ngay_tra_no) thanh toán nha em
+    - [qua năm](entity_xin_gia_han_ngay_tra_no) chị thanh toán
+    - [16](entity_xin_gia_han_ngay_tra_no) chị thanh toán được không
+    - [11](entity_xin_gia_han_ngay_tra_no) này anh trả
 
 - intent: intent_force_end
   examples: |
@@ -217,15 +234,23 @@ nlu:
     - fdsgs
     - sjaff
 
-- intent: intent_faq1
+- intent: intent_faq_han_tra_no
   examples: |
     - hạn chót trả nợ của anh là ngày bao nhiêu vậy em
     - khi nào thì đến hạn trả nợ vậy em
-    - anh còn thiếu bao nhiêu vậy em
-    - chị còn nợ bao nhiêu vậy em
     - hạn chót là ngày nào vậy em
     - ngày nào là hạn chót vậy em
-    - bao nhiêu tiền vậy em
-    - em nhắc lại giúp anh khoản nợ với
-    - khoản nợ của anh là như nào em nhỉ
     - khi nào thì phải trả vậy em
+    - khi nào hết hạn vậy em
+    - cho chị hỏi ngày mấy chị phải trả
+    - cho anh hỏi ngày mấy chị phải trả
+
+- intent: intent_faq_so_tien_no
+  examples: |
+    - anh còn thiếu bao nhiêu vậy em
+    - chị còn nợ bao nhiêu vậy em
+    - bao nhiêu tiền vậy em
+    - nợ bao nhiêu thế
+    - nợ bao nhiêu vậy
+    - em nói bao nhiêu
+    - bao nhiêu tiền

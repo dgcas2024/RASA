@@ -28,6 +28,7 @@
 
 import psycopg2
 import json
+import re
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -91,6 +92,49 @@ class ActionSetSlotLyDoKhachHangKhongTraNo(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         last_message = tracker.latest_message.get('text')
         return [SlotSet("slot_ly_do_khach_hang_khong_tra_no", last_message)]
+
+class ActionCheckKHXinGiaHanNo(Action):
+    def name(self) -> Text:
+        return "action_check_kh_xin_gia_han_ngay_tra_no"
+
+    def check_and_convert_date(date_string: str) -> datetime:
+        pattern = r"^\d{1,2}/\d{1,2}/\d{4}$"
+        if re.match(pattern, date_string):
+            try:
+                return datetime.strptime(date_string, "%d/%m/%Y")
+            except ValueError:
+                return None
+        else:
+            if date_string.isdigit():
+                day = int(date_string)
+                current_date = datetime.now()
+                current_year = current_date.year
+                current_month = current_date.month
+                try:
+                    return datetime(current_year, current_month, day)
+                except:
+                    return None
+            return None
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        kh_xin = tracker.get_slot("slot_xin_gia_han_ngay_tra_no");
+        date = self.check_and_convert_date(kh_xin)
+        if date is None:
+            return [dispatcher.utter_message(template = "utter_tu_choi_han_ngay_tra_no")]
+        today = datetime.now().today()
+        if date > today:
+            return [
+                SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y")),
+                dispatcher.utter_message(template= "utter_tu_choi_han_ngay_tra_no")
+            ]
+        if date == today:
+            return [SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))]
+        return [
+            SlotSet("slot_xin_gia_han_ngay_tra_no__tra_som_han", date.strftime("%d/%m/%Y")),
+            SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))
+        ]
 
 class SubmitConversation(Action):
     def name(self) -> Text:

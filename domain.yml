@@ -29,7 +29,7 @@ slots:
 
   slot_customer_name:
     type: text
-    initial_value: Đông/Tây/Nam/Bắc
+    initial_value: Đông
 
   slot_customer_debt_due_date:
     type: text
@@ -43,6 +43,10 @@ slots:
     type: text
     influence_conversation: true
     initial_value: ""
+
+  slot_xin_gia_han_ngay_tra_no__tra_som_han:
+    type: bool
+    initial_value: false
 
   slot_xin_gia_han_ngay_tra_no:
     type: text
@@ -62,7 +66,8 @@ intents:
 - intent_bad__xac_nhan_chung
 - intent_kh_xin_gia_han_ngay_tra_no
 - intent_force_end
-- intent_faq1
+- intent_faq_han_tra_no
+- intent_faq_so_tien_no
 
 responses:
   utter_xac_nhan_khach_hang:
@@ -71,6 +76,8 @@ responses:
   - text: "{slot_customer_title} {slot_customer_name}, em là chuyên viên phòng xử lý tín dụng, công ty tài chính ép e cờ re đít, em gọi để nhắc về hợp đồng vay của {slot_customer_title}, sắp đến hạn thanh toán vào ngày {slot_customer_debt_due_date}. Số tiền {slot_customer_title} cần thanh toán là {slot_customer_debt_amount} đồng, {slot_customer_title} sẽ thanh toán hợp đồng đúng hạn phải không?"
   utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1:
   - text: "Em xác nhận lại, là {slot_customer_title} đồng ý thanh toán, vào ngày {slot_customer_debt_due_date}, với số tiền {slot_customer_debt_amount} cho công ty em đúng không?"
+  utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_1__tra_som_han:
+  - text: "Em xác nhận lại, là {slot_customer_title} đồng ý thanh toán sớm, vào ngày {slot_xin_gia_han_ngay_tra_no}, với số tiền {slot_customer_debt_amount} cho công ty em đúng không?"
   utter_phan_hoi_tra_no_dung_han_good_xac_nhan_lan_2:
   - text: "Em ghi nhận cam kết thanh toán, để không phải nhận thêm cuộc gọi nhắc nợ đến số điện thoại của {slot_customer_title}, {slot_customer_title} vui lòng giữ đúng cam kết chứ ạ?"
   utter_ghi_nhan_thong_tin_tra_no_good:
@@ -91,8 +98,10 @@ responses:
   - text: "Tạm biệt quý khách!"
   utter_can_do_something_else:
   - text: ""
-  utter_faq1:
-  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount}, và hạn chót thanh toán là ngày {slot_customer_debt_due_date} ạ"
+  utter_faq_han_tra_no:
+  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} có hạn chót thanh toán là ngày {slot_customer_debt_due_date} ạ"
+  utter_faq_so_tien_no:
+  - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount} đồng ạ"
 
 session_config:
   session_expiration_time: 5
