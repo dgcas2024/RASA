@@ -138,7 +138,7 @@ class ActionCheckKHXinGiaHanNo(Action):
         if date == ngay_hop_dong:
             return [SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))]
         return [
-            SlotSet("slot_xin_gia_han_ngay_tra_no__tra_som_han", date.strftime("%d/%m/%Y")),
+            SlotSet("slot_xin_gia_han_ngay_tra_no__tra_som_han", True),
             SlotSet("slot_xin_gia_han_ngay_tra_no", date.strftime("%d/%m/%Y"))
         ]
 
