@@ -179,4 +179,10 @@ class SubmitConversation(Action):
         conn.commit()
         cursor.close()
         conn.close()
-        return [dispatcher.utter_message(response = "utter_xac_nhan_khach_hang")]
+        slot_xin_gia_han_ngay_tra_no__status = tracker.get_slot("slot_xin_gia_han_ngay_tra_no__status")
+        slot_customer_debt_due_date = tracker.get_slot("slot_customer_debt_due_date")
+        slot_customer_debt_amount = tracker.get_slot("slot_customer_debt_amount")
+        slot_xin_gia_han_ngay_tra_no = tracker.get_slot("slot_xin_gia_han_ngay_tra_no")
+        if slot_xin_gia_han_ngay_tra_no__status == "som":
+            return [dispatcher.utter_message(text = f"Thông tin thanh toán: \n Số tiền thanh toán: {slot_customer_debt_amount}\n Ngày yêu cầu thanh toán: {slot_customer_debt_due_date}\n Ngày thanh toán: {slot_xin_gia_han_ngay_tra_no}")]
+        return [dispatcher.utter_message(text = f"Thông tin thanh toán: \n Số tiền thanh toán: {slot_customer_debt_amount}\n Ngày yêu cầu thanh toán: {slot_customer_debt_due_date}\n Ngày thanh toán: {slot_customer_debt_due_date}")]
