@@ -70,7 +70,7 @@ class ActionGetThongTinCuocGoi(Action):
         customer_debt_due_date = datetime.now().strftime("%d/%m/%Y")
         customer_debt_amount = "0"
         if record is not None:
-            #sender_id = record[0]
+            #sender_id = record[0] 
             customer_title = record[1]
             customer_name = record[2]
             customer_debt_due_date = record[3]
