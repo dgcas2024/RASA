@@ -112,5 +112,5 @@ responses:
   - text: "Khoản nợ của {slot_customer_title} {slot_customer_name} là {slot_customer_debt_amount} đồng, anh đồng ý sẽ thanh toán đúng hạn chứ ạ"
 
 session_config:
-  session_expiration_time: 5
+  session_expiration_time: 10
   carry_over_slots_to_new_session: true
